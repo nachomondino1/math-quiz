@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="style.css">
+<title>Quizzes de repaso</title>
+</head>
+<body>
+<div id="app"><h1>Quizzes de repaso</h1><p class="tip">Cargando…</p></div>
+<script>
+(async () => {
+  const app = document.getElementById("app");
+  const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  try {
+    const list = await (await fetch("quizzes/manifest.json", { cache: "no-cache" })).json();
+    app.innerHTML = "<h1>Quizzes de repaso</h1><p class='tip'>Elegí uno para empezar.</p>" + list.map(q =>
+      `<a class="item" href="quiz.html?q=${encodeURIComponent(q.id)}"><div class="fe">${esc(q.fecha || "")}</div><div class="ti">${esc(q.titulo)}</div><div class="de">${esc(q.descripcion || "")}</div></a>`
+    ).join("");
+  } catch (e) {
+    app.innerHTML = "<h1>Quizzes de repaso</h1><p>No pude cargar la lista.</p>";
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+{
+ "id": "clase-01",
+ "titulo": "Repaso de hoy",
+ "fecha": "2026-09-30",
+ "descripcion": "Función, dominio e imagen, raíces y ordenada al origen.",
+ "temas": [
+  "Función y variables",
+  "Leer gráficos",
+  "Dominio e imagen",
+  "Raíces y ordenada"
+ ],
+ "consejos": {
+  "Función y variables": "Releé la definición de función y el ejercicio 1 (el del tanque).",
+  "Leer gráficos": "Practicá con el tanque: buscá primero el dato que te dan y seguí hasta la línea.",
+  "Dominio e imagen": "Dominio = valores de x (azul). Imagen = valores de y (verde). Buscá el punto más bajo y el más alto del gráfico.",
+  "Raíces y ordenada": "Raíz: corta el eje x y va entre llaves. Ordenada al origen: corta el eje y y se escribe (0; y)."
+ },
+ "graficos": {
+  "tank": {
+   "xr": [
+    7,
+    15
+   ],
+   "yr": [
+    0,
+    150
+   ],
+   "xs": 1,
+   "ys": 25,
+   "xfmt": "hora",
+   "xt": "Tiempo (horas)",
+   "yt": "Agua (litros)",
+   "pts": [
+    [
+     8,
+     50
+    ],
+    [
+     9,
+     100
+    ],
+    [
+     10,
+     100
+    ],
+    [
+     11,
+     25
+    ],
+    [
+     12,
+     75
+    ],
+    [
+     13,
+     125
+    ],
+    [
+     14,
+     150
+    ]
+   ],
+   "dots": true
+  },
+  "d1": {
+   "xr": [
+    -6,
+    5
+   ],
+   "yr": [
+    -4,
+    5
+   ],
+   "cross": true,
+   "pts": [
+    [
+     -4,
+     -2
+    ],
+    [
+     -1,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "mk": [
+    [
+     -4,
+     -2,
+     "c"
+    ],
+    [
+     3,
+     1,
+     "c"
+    ]
+   ]
+  },
+  "r": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -3,
+    3
+   ],
+   "cross": true,
+   "pts": [
+    [
+     -5,
+     -2
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "mk": [
+    [
+     -5,
+     -2,
+     "c"
+    ],
+    [
+     5,
+     2,
+     "c"
+    ]
+   ]
+  }
+ },
+ "preguntas": [
+  {
+   "tema": "Función y variables",
+   "texto": "Una función relaciona números mediante pares ordenados (x; y). En el par (3; 5), ¿cuánto valen x e y?",
+   "opciones": [
+    "x = 3 e y = 5",
+    "x = 5 e y = 3",
+    "x = 3 e y = 3",
+    "x = 5 e y = 5"
+   ],
+   "correcta": 0,
+   "explicacion": "En un par (x; y) el primer número es x y el segundo es y. Acá: x = 3 e y = 5."
+  },
+  {
+   "tema": "Función y variables",
+   "texto": "Un gráfico muestra cuántos litros de agua hay en un tanque a lo largo de las horas. ¿Cuáles son las dos variables?",
+   "opciones": [
+    "El tiempo y la cantidad de agua",
+    "La cantidad de agua y los metros del tanque",
+    "Solo el tiempo",
+    "El tanque y la casa"
+   ],
+   "correcta": 0,
+   "explicacion": "Las variables son las dos cosas que se relacionan en el gráfico: el tiempo (eje x) y la cantidad de agua en litros (eje y)."
+  },
+  {
+   "tema": "Leer gráficos",
+   "grafico": "tank",
+   "texto": "Este gráfico muestra los litros de agua de un tanque durante la mañana. ¿Cuántos litros había a las 12:00?",
+   "opciones": [
+    "75 litros",
+    "25 litros",
+    "100 litros",
+    "125 litros"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      12,
+      75
+     ]
+    ]
+   },
+   "explicacion": "Buscá las 12:00 abajo, subí hasta la línea y leé el valor a la izquierda: 75 litros."
+  },
+  {
+   "tema": "Leer gráficos",
+   "grafico": "tank",
+   "texto": "¿A qué hora había 25 litros?",
+   "opciones": [
+    "A las 11:00",
+    "A las 9:00",
+    "A las 12:00",
+    "A las 8:00"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      11,
+      25
+     ]
+    ]
+   },
+   "explicacion": "Ahora al revés: desde 25 litros andá hacia la derecha hasta la línea y bajá al eje del tiempo: 11:00."
+  },
+  {
+   "tema": "Leer gráficos",
+   "grafico": "tank",
+   "texto": "¿Cuándo se mantuvo constante la cantidad de agua?",
+   "opciones": [
+    "De 9:00 a 10:00",
+    "De 10:00 a 11:00",
+    "De 11:00 a 12:00",
+    "De 13:00 a 14:00"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      9,
+      100
+     ],
+     [
+      10,
+      100
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "Constante = la línea va horizontal. Pasa de 9:00 a 10:00, con 100 litros."
+  },
+  {
+   "tema": "Leer gráficos",
+   "grafico": "tank",
+   "texto": "¿El tanque se vació en algún momento?",
+   "opciones": [
+    "No: nunca llegó a 0 litros (el mínimo fue 25)",
+    "Sí, a las 11:00",
+    "Sí, a las 8:00, porque ahí empieza el gráfico",
+    "No, porque el agua siempre subió"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      11,
+      25
+     ]
+    ]
+   },
+   "explicacion": "Vaciarse es llegar a 0 litros. Lo más bajo fue 25, a las 11:00. Y el agua no siempre subió: también bajó."
+  },
+  {
+   "tema": "Dominio e imagen",
+   "grafico": "d1",
+   "texto": "Mirá esta función. ¿Cuál es su dominio?",
+   "opciones": [
+    "[−4; 3]",
+    "[−2; 3]",
+    "[−4; 1]",
+    "[−1; 3]"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "dom": [
+     -4,
+     3
+    ]
+   },
+   "explicacion": "Dominio = los valores de x (eje x, en azul). Va de −4 a 3."
+  },
+  {
+   "tema": "Dominio e imagen",
+   "grafico": "d1",
+   "texto": "¿Y su imagen?",
+   "opciones": [
+    "[−2; 3]",
+    "[−2; 1]",
+    "[−4; 3]",
+    "[1; 3]"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "img": [
+     -2,
+     3
+    ]
+   },
+   "explicacion": "Imagen = los valores de y (en verde). Lo más bajo es −2 y lo más alto es 3, que está en el pico (en el extremo derecho vale 1)."
+  },
+  {
+   "tema": "Raíces y ordenada",
+   "grafico": "r",
+   "texto": "Esta función corta el eje x en varios puntos. ¿Cuáles son sus raíces?",
+   "opciones": [
+    "C⁰ = {−3; 1; 4}",
+    "C⁰ = (−3; 1; 4)",
+    "C⁰ = {1}",
+    "C⁰ = {−5; 5}"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      -3,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      4,
+      0
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "Las raíces son los x donde la gráfica corta el eje x (f(x) = 0): −3, 1 y 4. Van entre llaves. (−5 y 5 son los extremos del dominio, no raíces)."
+  },
+  {
+   "tema": "Raíces y ordenada",
+   "grafico": "r",
+   "texto": "¿Y la ordenada al origen?",
+   "opciones": [
+    "Ord = (0; 1)",
+    "Ord = (1; 0)",
+    "Ord = {1}",
+    "Ord = (0; 2)"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      0,
+      1
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "Es donde la gráfica corta el eje y (f(0)) y se escribe como punto: (0; 1). Ojo: (1; 0) es una raíz, no la ordenada."
+  }
+ ]
+}
