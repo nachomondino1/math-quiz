@@ -71,6 +71,22 @@ function saveScore(good, total){
   catch (e) {}
 }
 
+function tagClass(t){
+  const i = QZ.temas.indexOf(t);
+  return "t" + (Math.max(i, 0) % 5);
+}
+
+function scoreRing(good, total){
+  const r = 54, c = Math.round(2 * Math.PI * r);
+  const off = total ? Math.round(c * (1 - good / total)) : c;
+  return `<svg viewBox="0 0 130 130" class="ring-sc" role="img" aria-label="${good} de ${total} correctas">
+    <circle cx="65" cy="65" r="${r}" class="ring-bg"/>
+    <circle cx="65" cy="65" r="${r}" class="ring-fg" stroke-dasharray="${c}" stroke-dashoffset="${c}" data-off="${off}"/>
+    <text x="65" y="60" text-anchor="middle" class="ring-n">${good}/${total}</text>
+    <text x="65" y="80" text-anchor="middle" class="ring-l">correctas</text>
+  </svg>`;
+}
+
 function fail(msg){
   app.innerHTML = `${TOP}<div class="card"><h1>Ups</h1><p>${esc(msg)}</p></div>`;
 }
@@ -117,7 +133,7 @@ function render(){
   app.innerHTML = `
     ${TOP}
     <div class="prog"><div style="width:${pos / queue.length * 100}%"></div></div>
-    <div class="meta"><span>Pregunta ${pos + 1} de ${queue.length}</span><span class="chip">${esc(q.tema)}</span></div>
+    <div class="meta"><span>Pregunta ${pos + 1} de ${queue.length}</span><span class="chip ${tagClass(q.tema)}">${esc(q.tema)}</span></div>
     <div class="card" id="card" tabindex="-1">
       <p class="q">${esc(q.texto)}</p>
       ${q.grafico ? `<div id="gw">${graph(QZ.graficos[q.grafico])}</div><div id="lg"></div>` : ""}
@@ -148,8 +164,11 @@ function answer(k){
     }
   }
   const last = pos + 1 >= queue.length;
+  const icon = ok
+    ? `<svg class="fi good" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+    : `<svg class="fi wrong" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>`;
   document.getElementById("fb").innerHTML = `
-    <div class="fb ${ok ? "good" : "wrong"}"><strong>${ok ? "¡Bien!" : "No era esa."}</strong> ${esc(q.explicacion)}</div>
+    <div class="fb ${ok ? "good" : "wrong"}">${icon}<div><strong>${ok ? "¡Bien!" : "No era esa."}</strong> ${esc(q.explicacion)}</div></div>
     <button class="btn" id="nx">${last ? "Ver resultado" : "Siguiente"}</button>`;
   document.getElementById("nx").onclick = () => { pos++; render(); window.scrollTo(0, 0); };
   document.getElementById("fb").scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -173,15 +192,17 @@ function summary(){
   saveScore(good, total);
   app.innerHTML = `${TOP}<div class="card">
     <h1>Resultado</h1>
-    <div class="score">${good} / ${total}</div>
+    ${scoreRing(good, total)}
     <p>${msg}</p>
     ${better}
-    ${temas.map(x => `<div class="row"><span class="nm">${esc(x.t)}</span><span class="bar"><div style="width:${x.n / x.m * 100}%"></div></span><span class="n">${x.n}/${x.m}</span></div>`).join("")}
+    ${temas.map(x => `<div class="row"><span class="nm"><span class="dot ${tagClass(x.t)}"></span>${esc(x.t)}</span><span class="bar"><div style="width:${x.n / x.m * 100}%"></div></span><span class="n">${x.n}/${x.m}</span></div>`).join("")}
     ${temas.filter(x => x.n < x.m && cons[x.t]).map(x => `<p class="tip"><strong>${esc(x.t)}:</strong> ${esc(cons[x.t])}</p>`).join("")}
     ${failed.length ? `<button class="btn" id="rt">Repetir las que fallé (${failed.length})</button>` : ""}
     <button class="btn sec" id="rs">Empezar de nuevo</button></div>`;
   if (failed.length) document.getElementById("rt").onclick = () => start(failed);
   document.getElementById("rs").onclick = () => { Object.keys(done).forEach(k => delete done[k]); start(Q.map((_, i) => i)); };
+  const ring = document.querySelector(".ring-fg");
+  if (ring) requestAnimationFrame(() => { ring.style.strokeDashoffset = ring.dataset.off; });
   window.scrollTo(0, 0);
 }
 
