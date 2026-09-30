@@ -9,22 +9,6 @@
   --blob1:rgba(194,37,92,.16);--blob2:rgba(124,58,237,.14);
   --tag1:#7c3aed;--tag1-soft:#ede9fe;--tag2:#0d9488;--tag2-soft:#ccfbf1;--tag3:#c2410c;--tag3-soft:#ffedd5;--tag4:#2b6cb0;--tag4-soft:#e3eefb;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#10161d;--card:#1a232d;--text:#e8edf3;--muted:#9aa8b8;--accent:#ff8fc7;--accent-soft:#3a1f30;--accent2:#a78bfa;
-    --ok:#5fd18c;--ok-soft:#173a29;--bad:#ff8a7d;--bad-soft:#40201d;--grid:#2e3b4a;--border:#3a4756;
-    --blue:#5aa2ff;--green:#4fd389;--hl:#ffb347;--shadow:rgba(0,0,0,.45);
-    --blob1:rgba(255,143,199,.16);--blob2:rgba(167,139,250,.16);
-    --tag1:#a78bfa;--tag1-soft:#2e2350;--tag2:#2dd4bf;--tag2-soft:#0f3b37;--tag3:#fb923c;--tag3-soft:#452710;--tag4:#6aa9ee;--tag4-soft:#1e3350;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#10161d;--card:#1a232d;--text:#e8edf3;--muted:#9aa8b8;--accent:#ff8fc7;--accent-soft:#3a1f30;--accent2:#a78bfa;
-  --ok:#5fd18c;--ok-soft:#173a29;--bad:#ff8a7d;--bad-soft:#40201d;--grid:#2e3b4a;--border:#3a4756;
-  --blue:#5aa2ff;--green:#4fd389;--hl:#ffb347;--shadow:rgba(0,0,0,.45);
-  --blob1:rgba(255,143,199,.16);--blob2:rgba(167,139,250,.16);
-  --tag1:#a78bfa;--tag1-soft:#2e2350;--tag2:#2dd4bf;--tag2-soft:#0f3b37;--tag3:#fb923c;--tag3-soft:#452710;--tag4:#6aa9ee;--tag4-soft:#1e3350;
-}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{
@@ -96,8 +80,6 @@ h1{font-family:var(--font-display);font-size:1.6rem;font-weight:700;margin:0 0 6
 .fi.wrong{fill:var(--bad)}
 .btn{font:inherit;font-family:var(--font-display);font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;border-radius:12px;padding:13px 20px;min-height:48px;cursor:pointer;width:100%;box-shadow:0 6px 16px -6px var(--shadow);transition:transform .15s ease}
 .btn:active{transform:scale(.97)}
-:root[data-theme="dark"] .btn{color:#0b1520}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0b1520}}
 .btn.sec{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-top:10px;box-shadow:none}
 .ring-sc{width:150px;height:150px;display:block;margin:4px auto}
 .ring-bg{fill:none;stroke:var(--grid);stroke-width:12}
