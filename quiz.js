@@ -80,11 +80,27 @@ function scoreRing(good, total){
   const r = 54, c = Math.round(2 * Math.PI * r);
   const off = total ? Math.round(c * (1 - good / total)) : c;
   return `<svg viewBox="0 0 130 130" class="ring-sc" role="img" aria-label="${good} de ${total} correctas">
+    <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--accent2)"/>
+    </linearGradient></defs>
     <circle cx="65" cy="65" r="${r}" class="ring-bg"/>
     <circle cx="65" cy="65" r="${r}" class="ring-fg" stroke-dasharray="${c}" stroke-dashoffset="${c}" data-off="${off}"/>
     <text x="65" y="60" text-anchor="middle" class="ring-n">${good}/${total}</text>
     <text x="65" y="80" text-anchor="middle" class="ring-l">correctas</text>
   </svg>`;
+}
+
+function confetti(){
+  const colors = ["var(--accent)", "var(--accent2)", "var(--tag2)", "var(--tag3)", "var(--tag4)"];
+  let s = '<div class="confetti" aria-hidden="true">';
+  for (let i = 0; i < 24; i++){
+    const left = (Math.random() * 100).toFixed(1);
+    const delay = (Math.random() * 0.4).toFixed(2);
+    const dur = (1.6 + Math.random() * 1).toFixed(2);
+    const rot = Math.round(Math.random() * 360);
+    s += `<span style="left:${left}%;background:${colors[i % colors.length]};animation-delay:${delay}s;animation-duration:${dur}s;transform:rotate(${rot}deg)"></span>`;
+  }
+  return s + "</div>";
 }
 
 function fail(msg){
@@ -137,7 +153,7 @@ function render(){
     <div class="card" id="card" tabindex="-1">
       <p class="q">${esc(q.texto)}</p>
       ${q.grafico ? `<div id="gw">${graph(QZ.graficos[q.grafico])}</div><div id="lg"></div>` : ""}
-      <div id="opts">${order.map((oi, k) => `<button class="opt" data-k="${k}"><span class="let">${"ABCDEF"[k]}</span><span>${esc(q.opciones[oi])}</span></button>`).join("")}</div>
+      <div id="opts">${order.map((oi, k) => `<button class="opt" data-k="${k}"><span class="let t${k % 4}">${"ABCDEF"[k]}</span><span>${esc(q.opciones[oi])}</span></button>`).join("")}</div>
       <div id="fb" aria-live="polite"></div>
     </div>`;
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.k));
@@ -190,7 +206,7 @@ function summary(){
   const better = prev && prev.total === total && good > prev.good
     ? `<p class="better">Mejoraste: la vez pasada ${prev.good}/${total}, ahora ${good}/${total}.</p>` : "";
   saveScore(good, total);
-  app.innerHTML = `${TOP}<div class="card">
+  app.innerHTML = `${good === total ? confetti() : ""}${TOP}<div class="card">
     <h1>Resultado</h1>
     ${scoreRing(good, total)}
     <p>${msg}</p>
