@@ -123,3 +123,15 @@ a{color:var(--accent)}
 .item .fe{font-size:.8rem;color:var(--muted)}
 .item .de{font-size:.92rem;color:var(--muted);margin-top:2px}
 
+@media (min-width:860px){
+  html{font-size:18px}
+  #app{max-width:760px;padding:32px 16px 56px}
+  .card{padding:28px}
+  .btn{padding:16px 22px}
+  .opt{padding:16px 18px;min-height:60px}
+  .opt .let{width:32px;height:32px;font-size:1rem}
+  .gr{max-width:520px}
+  .ring-sc{width:190px;height:190px}
+  .item{padding:18px 20px}
+}
+
