@@ -18,3 +18,6 @@ Ojo: en el plan Free, Pages solo funciona con repos públicos, así que no ponga
 
 ## Probar local
 `python -m http.server 8000` y abrir http://localhost:8000 (con doble clic en el archivo no funciona: el navegador bloquea `fetch` en `file://`).
+
+## Si cambiás `quiz.js` o `style.css`
+El celular puede tener esos dos archivos guardados en caché de una visita anterior. Subí el número `?v=2` a `?v=3` (hay una referencia en `quiz.html` e `index.html`) para que el navegador baje la versión nueva. Los JSON de `quizzes/` no necesitan esto: ya se piden siempre sin caché.

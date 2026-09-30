@@ -12,7 +12,8 @@ function graph(g){
   const xs = g.xs || 1, ys = g.ys || 1;
   const ax = g.cross ? sx(0) : sx(x0), ay = g.cross ? sy(0) : sy(y0);
   const hl = g.hl || {};
-  let s = `<svg viewBox="0 0 ${W} ${H}" class="gr" role="img" aria-label="Gráfico de una función">`;
+  const label = g.xt && g.yt ? `Gráfico: ${g.xt} en el eje horizontal, ${g.yt} en el eje vertical` : "Gráfico de una función";
+  let s = `<svg viewBox="0 0 ${W} ${H}" class="gr" role="img" aria-label="${esc(label)}">`;
   for (let x = x0; x <= x1; x += xs) s += `<line class="gl" x1="${sx(x)}" y1="${sy(y0)}" x2="${sx(x)}" y2="${sy(y1)}"/>`;
   for (let y = y0; y <= y1; y += ys) s += `<line class="gl" x1="${sx(x0)}" y1="${sy(y)}" x2="${sx(x1)}" y2="${sy(y)}"/>`;
   s += `<line class="ax" x1="${sx(x0)}" y1="${ay}" x2="${sx(x1)}" y2="${ay}"/>`;
@@ -53,6 +54,23 @@ let QZ, Q, done = {}, queue = [], pos = 0, order = [], locked = false;
 
 const TOP = `<div class="top"><a href="index.html">← Todos los quizzes</a></div>`;
 
+function since(ts){
+  const d = Math.floor((Date.now() - ts) / 86400000);
+  return d <= 0 ? "hoy" : d === 1 ? "ayer" : `hace ${d} días`;
+}
+
+function bestScore(){
+  try {
+    const raw = localStorage.getItem("mq:" + QZ.id);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
+function saveScore(good, total){
+  try { localStorage.setItem("mq:" + QZ.id, JSON.stringify({ good, total, ts: Date.now() })); }
+  catch (e) {}
+}
+
 function fail(msg){
   app.innerHTML = `${TOP}<div class="card"><h1>Ups</h1><p>${esc(msg)}</p></div>`;
 }
@@ -77,10 +95,14 @@ function shuffle(a){
 }
 
 function intro(){
+  const mins = Math.max(3, Q.length);
+  const prev = bestScore();
+  const last = prev ? `<p class="tip">Último intento: ${prev.good}/${prev.total} · ${since(prev.ts)}</p>` : "";
   app.innerHTML = `${TOP}<div class="card">
     <h1>${esc(QZ.titulo)}</h1>
     <p>${esc(QZ.descripcion || "")}</p>
-    <ul class="ideas"><li>${Q.length} preguntas, unos 10 minutos</li><li>Te explica cada respuesta</li><li>No es una nota: es para ver qué te quedó firme</li></ul>
+    <ul class="ideas"><li>${Q.length} preguntas, unos ${mins} minutos</li><li>Te explica cada respuesta</li><li>No es una nota: es para ver qué te quedó firme</li></ul>
+    ${last}
     <button class="btn" id="go">Empezar</button></div>`;
   document.getElementById("go").onclick = () => start(Q.map((_, i) => i));
 }
@@ -93,15 +115,17 @@ function render(){
   order = shuffle(q.opciones.map((_, i) => i));
   locked = false;
   app.innerHTML = `
+    ${TOP}
     <div class="prog"><div style="width:${pos / queue.length * 100}%"></div></div>
     <div class="meta"><span>Pregunta ${pos + 1} de ${queue.length}</span><span class="chip">${esc(q.tema)}</span></div>
-    <div class="card">
+    <div class="card" id="card" tabindex="-1">
       <p class="q">${esc(q.texto)}</p>
       ${q.grafico ? `<div id="gw">${graph(QZ.graficos[q.grafico])}</div><div id="lg"></div>` : ""}
       <div id="opts">${order.map((oi, k) => `<button class="opt" data-k="${k}"><span class="let">${"ABCDEF"[k]}</span><span>${esc(q.opciones[oi])}</span></button>`).join("")}</div>
-      <div id="fb"></div>
+      <div id="fb" aria-live="polite"></div>
     </div>`;
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.k));
+  document.getElementById("card").focus({ preventScroll: true });
 }
 
 function answer(k){
@@ -138,15 +162,20 @@ function summary(){
     const idx = Q.map((q, i) => q.tema === t ? i : -1).filter(i => i >= 0);
     return { t, n: idx.filter(i => done[i]).length, m: idx.length };
   }).filter(x => x.m > 0);
-  const msg = good === total ? "¡Perfecto! Te quedó todo firme."
+  const msg = good === total ? "¡Perfecto! 🎉 Te quedó todo firme."
     : good >= total * 0.75 ? "¡Muy bien! Repasá lo que falló y listo."
     : good >= total * 0.5 ? "Vas bien. Hay un par de cosas para afianzar."
     : "Es un repaso: sirve justamente para ver qué falta. Lo vemos en la próxima clase.";
   const cons = QZ.consejos || {};
+  const prev = bestScore();
+  const better = prev && prev.total === total && good > prev.good
+    ? `<p class="better">Mejoraste: la vez pasada ${prev.good}/${total}, ahora ${good}/${total}.</p>` : "";
+  saveScore(good, total);
   app.innerHTML = `${TOP}<div class="card">
     <h1>Resultado</h1>
     <div class="score">${good} / ${total}</div>
     <p>${msg}</p>
+    ${better}
     ${temas.map(x => `<div class="row"><span class="nm">${esc(x.t)}</span><span class="bar"><div style="width:${x.n / x.m * 100}%"></div></span><span class="n">${x.n}/${x.m}</span></div>`).join("")}
     ${temas.filter(x => x.n < x.m && cons[x.t]).map(x => `<p class="tip"><strong>${esc(x.t)}:</strong> ${esc(cons[x.t])}</p>`).join("")}
     ${failed.length ? `<button class="btn" id="rt">Repetir las que fallé (${failed.length})</button>` : ""}
@@ -155,5 +184,20 @@ function summary(){
   document.getElementById("rs").onclick = () => { Object.keys(done).forEach(k => delete done[k]); start(Q.map((_, i) => i)); };
   window.scrollTo(0, 0);
 }
+
+/* ---------- Atajos de teclado ---------- */
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const focusedLink = ["a", "button"].includes((e.target.tagName || "").toLowerCase());
+  if ((e.key === "Enter" || e.key === " ") && !focusedLink){
+    const nx = document.getElementById("nx");
+    if (nx){ e.preventDefault(); nx.click(); return; }
+  }
+  if (locked) return;
+  const map = { 1: 0, 2: 1, 3: 2, 4: 3, a: 0, b: 1, c: 2, d: 3, A: 0, B: 1, C: 2, D: 3 };
+  if (!(e.key in map)) return;
+  const b = document.querySelectorAll("#opts .opt")[map[e.key]];
+  if (b) b.click();
+});
 
 load();

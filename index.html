@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Quizzes cortos de repaso de matemática, con gráficos y explicaciones.">
+<meta name="theme-color" content="#f4f7fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10161d" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css?v=2">
 <title>Quizzes de repaso</title>
 </head>
 <body>
@@ -12,11 +16,23 @@
 (async () => {
   const app = document.getElementById("app");
   const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  const since = ts => {
+    const d = Math.floor((Date.now() - ts) / 86400000);
+    return d <= 0 ? "hoy" : d === 1 ? "ayer" : `hace ${d} días`;
+  };
+  const attempt = id => {
+    try {
+      const raw = localStorage.getItem("mq:" + id);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  };
   try {
     const list = await (await fetch("quizzes/manifest.json", { cache: "no-cache" })).json();
-    app.innerHTML = "<h1>Quizzes de repaso</h1><p class='tip'>Elegí uno para empezar.</p>" + list.map(q =>
-      `<a class="item" href="quiz.html?q=${encodeURIComponent(q.id)}"><div class="fe">${esc(q.fecha || "")}</div><div class="ti">${esc(q.titulo)}</div><div class="de">${esc(q.descripcion || "")}</div></a>`
-    ).join("");
+    app.innerHTML = "<h1>Quizzes de repaso</h1><p class='tip'>Elegí uno para empezar.</p>" + list.map(q => {
+      const a = attempt(q.id);
+      const badge = a ? `<span class="chip">${a.good}/${a.total} · ${since(a.ts)}</span>` : "";
+      return `<a class="item" href="quiz.html?q=${encodeURIComponent(q.id)}"><div class="fe">${esc(q.fecha || "")}</div><div class="ti">${esc(q.titulo)} ${badge}</div><div class="de">${esc(q.descripcion || "")}</div></a>`;
+    }).join("");
   } catch (e) {
     app.innerHTML = "<h1>Quizzes de repaso</h1><p>No pude cargar la lista.</p>";
   }
