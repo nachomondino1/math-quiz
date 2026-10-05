@@ -1,0 +1,224 @@
+{
+  "id": "clase-02",
+  "titulo": "Análisis de funciones",
+  "fecha": "2026-10-05",
+  "descripcion": "Dominio, imagen, ceros, ordenada, signo, crecimiento y extremos, leyendo el gráfico de una función.",
+  "temas": [
+    "Dominio e imagen",
+    "Ceros y ordenada al origen",
+    "Positividad y negatividad",
+    "Crecimiento, decrecimiento y constante",
+    "Máximos y mínimos relativos",
+    "Notación",
+    "De la descripción al gráfico"
+  ],
+  "consejos": {
+    "Dominio e imagen": "Dominio = valores de x (todo el ancho). Imagen = valores de y (todo el alto). Si la línea se corta en seco ahí termina; si sigue hasta el borde del dibujo, sigue al infinito.",
+    "Ceros y ordenada al origen": "Ceros: donde cruza el eje x, van entre llaves {}. Ordenada al origen: donde cruza el eje y, se escribe como punto (0; y).",
+    "Positividad y negatividad": "Positiva = arriba del eje x. Negativa = abajo. Los ceros (donde vale 0) no entran en ninguno de los dos, por eso siempre van con paréntesis.",
+    "Crecimiento, decrecimiento y constante": "Mirá la gráfica de izquierda a derecha: si sube es creciente, si baja es decreciente, si va plana es constante. Siempre son valores de x.",
+    "Máximos y mínimos relativos": "Máximo: pasa de subir a bajar (una loma). Mínimo: pasa de bajar a subir (un valle). Si no cambia de sentido, no es ninguno de los dos, aunque sea un punto raro del gráfico.",
+    "Notación": "Llaves para números sueltos (los ceros). Paréntesis o corchetes para intervalos: corchete si el punto entra (círculo lleno), paréntesis si no entra o si es ±∞.",
+    "De la descripción al gráfico": "Leé cada dato (dominio, ceros, máximo o mínimo, crecimiento) y fijate cuál gráfico cumple TODOS a la vez, no solo uno."
+  },
+  "graficos": {
+    "f": {
+      "xr": [-7, 8],
+      "yr": [-5, 6],
+      "cross": true,
+      "pts": [[-7, -2], [-4, -2], [-1, 4], [3, -4], [8, 6]],
+      "mk": [[-4, -2, "c"], [-3, 0, "c"], [-1, 4, "c"], [0, 2, "c"], [1, 0, "c"], [3, -4, "c"], [5, 0, "c"]]
+    },
+    "rv1_correct": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-4, 4], [-2, 0], [0, -4], [2, 0], [4, 4]]
+    },
+    "rv1_b": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-3, 4], [-1, 0], [1, -4], [3, 0], [5, 4]]
+    },
+    "rv1_c": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-4, -4], [-2, 0], [0, 4], [2, 0], [4, -4]]
+    },
+    "rv1_d": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, 4], [-3, 0], [-1, -4], [1, 0], [3, 4]]
+    },
+    "rv2_correct": {
+      "xr": [-6, 6], "yr": [-7, 7], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, 6], [5, -4]], "mk": [[-5, 6, "c"], [5, -4, "c"]]
+    },
+    "rv2_b": {
+      "xr": [-6, 6], "yr": [-7, 7], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, -4], [5, 6]], "mk": [[-5, -4, "c"], [5, 6, "c"]]
+    },
+    "rv2_c": {
+      "xr": [-6, 6], "yr": [-7, 7], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, 4], [5, -6]], "mk": [[-5, 4, "c"], [5, -6, "c"]]
+    },
+    "rv2_d": {
+      "xr": [-6, 6], "yr": [-7, 7], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, 6], [0, -4], [5, 6]], "mk": [[-5, 6, "c"], [5, 6, "c"]]
+    }
+  },
+  "preguntas": [
+    {
+      "tema": "Dominio e imagen",
+      "grafico": "f",
+      "texto": "Esta es la función que vamos a analizar en todo este quiz. ¿Cuál es su dominio?",
+      "opciones": ["(−∞; +∞)", "[−7; 8]", "(−4; 8]", "[−4; +∞)"],
+      "correcta": 0,
+      "resaltar": { "dom": [-7, 8] },
+      "explicacion": "El dominio son los valores de x. Esta gráfica no tiene huecos ni se corta en seco: sigue hacia la izquierda y hacia la derecha para siempre. Por eso el dominio es todos los reales: (−∞; +∞)."
+    },
+    {
+      "tema": "Dominio e imagen",
+      "grafico": "f",
+      "texto": "¿Y cuál es su imagen?",
+      "opciones": ["[−4; +∞)", "(−∞; −4]", "[−4; 6]", "(−∞; +∞)"],
+      "correcta": 0,
+      "resaltar": { "img": [-4, 6] },
+      "explicacion": "La imagen son los valores de y. El más bajo es −4, en el mínimo (punto lleno, por eso entra: corchete). Hacia arriba no hay techo: sigue subiendo para siempre, aunque el dibujo se corte en 6 porque ahí termina la hoja. Imagen = [−4; +∞)."
+    },
+    {
+      "tema": "Ceros y ordenada al origen",
+      "grafico": "f",
+      "texto": "¿Cuáles son los ceros (raíces) de esta función?",
+      "opciones": ["C⁰ = {−3; 1; 5}", "C⁰ = (−3; 1; 5)", "C⁰ = {−3; 5}", "C⁰ = {0; 2}"],
+      "correcta": 0,
+      "resaltar": { "pts": [[-3, 0], [1, 0], [5, 0]], "guides": false },
+      "explicacion": "Los ceros son los x donde la gráfica cruza el eje x: −3, 1 y 5. Van entre llaves, porque son valores sueltos, no un intervalo."
+    },
+    {
+      "tema": "Ceros y ordenada al origen",
+      "grafico": "f",
+      "texto": "¿Cuál es la ordenada al origen?",
+      "opciones": ["Ord = (0; 2)", "Ord = (2; 0)", "Ord = {2}", "Ord = (0; −2)"],
+      "correcta": 0,
+      "resaltar": { "pts": [[0, 2]], "guides": false },
+      "explicacion": "Es el punto donde la gráfica corta el eje y, cuando x = 0. Se escribe como par (x; y): (0; 2). No es (2; 0): eso sería si cortara el eje x en 2, y acá no pasa."
+    },
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "f",
+      "texto": "¿Cuál es el conjunto de positividad (dónde la función es mayor que 0)?",
+      "opciones": ["C⁺ = (−3; 1) ∪ (5; +∞)", "C⁺ = (−∞; −3) ∪ (1; 5)", "C⁺ = [−3; 1] ∪ [5; +∞)", "C⁺ = (−3; 5)"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-3, 1], [5, 8]], "label": "Positivo (arriba del eje x)" },
+      "explicacion": "Positiva = la gráfica está arriba del eje x. Eso pasa entre −3 y 1, y desde 5 hacia la derecha. Los ceros no entran (ahí vale 0, ni positivo ni negativo), por eso van con paréntesis."
+    },
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "f",
+      "texto": "¿Y el conjunto de negatividad?",
+      "opciones": ["C⁻ = (−∞; −3) ∪ (1; 5)", "C⁻ = (−3; 1) ∪ (5; +∞)", "C⁻ = [−∞; −3] ∪ [1; 5]", "C⁻ = (1; 5)"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-7, -3], [1, 5]], "label": "Negativo (debajo del eje x)" },
+      "explicacion": "Negativa = la gráfica está debajo del eje x: antes de −3, y entre 1 y 5. Ojo: −∞ nunca lleva corchete, siempre paréntesis."
+    },
+    {
+      "tema": "Crecimiento, decrecimiento y constante",
+      "grafico": "f",
+      "texto": "¿En qué intervalos la función es creciente?",
+      "opciones": ["I↑ = (−4; −1) ∪ (3; +∞)", "I↑ = (−1; 3)", "I↑ = (−∞; −4) ∪ (−1; 3)", "I↑ = [−4; −1] ∪ [3; +∞)"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-4, -1], [3, 8]], "label": "Creciente (sube)" },
+      "explicacion": "Creciente = mirando de izquierda a derecha, la gráfica sube. Pasa entre −4 y −1, y desde 3 en adelante."
+    },
+    {
+      "tema": "Crecimiento, decrecimiento y constante",
+      "grafico": "f",
+      "texto": "¿Y dónde es decreciente?",
+      "opciones": ["I↓ = (−1; 3)", "I↓ = (−4; −1) ∪ (3; +∞)", "I↓ = (−∞; −4)", "I↓ = [−1; 3]"],
+      "correcta": 0,
+      "resaltar": { "dom": [-1, 3], "label": "Decrece (baja)" },
+      "explicacion": "Decreciente = la gráfica baja. Eso pasa en un solo tramo acá: entre −1 y 3."
+    },
+    {
+      "tema": "Crecimiento, decrecimiento y constante",
+      "grafico": "f",
+      "texto": "¿Dónde es constante?",
+      "opciones": ["I→ = (−∞; −4)", "I→ = (−4; −1)", "I→ = {−4}", "I→ = (−∞; +∞)"],
+      "correcta": 0,
+      "resaltar": { "dom": [-7, -4], "label": "Constante (horizontal)" },
+      "explicacion": "Constante = la gráfica va horizontal, ni sube ni baja. Pasa antes de −4, valiendo siempre −2. Es un intervalo de x, no un punto suelto, por eso no lleva llaves."
+    },
+    {
+      "tema": "Máximos y mínimos relativos",
+      "grafico": "f",
+      "texto": "¿Cuál es el máximo relativo?",
+      "opciones": ["Máx. rel. = (−1; 4)", "Máx. rel. = 4", "Máx. rel. = (4; −1)", "Máx. rel. = (−4; −2)"],
+      "correcta": 0,
+      "resaltar": { "pts": [[-1, 4]] },
+      "explicacion": "Es la punta de la loma: donde pasa de subir a bajar. Se escribe el punto completo (x; y), no solo la altura: (−1; 4). Y ojo, (−4; −2) no es máximo ni mínimo: ahí la función pasa de constante a creciente, no cambia de subir a bajar."
+    },
+    {
+      "tema": "Máximos y mínimos relativos",
+      "grafico": "f",
+      "texto": "¿Y el mínimo relativo?",
+      "opciones": ["Mín. rel. = (3; −4)", "Mín. rel. = −4", "Mín. rel. = (−4; 3)", "Mín. rel. = (−1; 4)"],
+      "correcta": 0,
+      "resaltar": { "pts": [[3, -4]] },
+      "explicacion": "Es el fondo del valle: donde pasa de bajar a subir. El punto es (3; −4). (−1; 4) es el máximo, no el mínimo."
+    },
+    {
+      "tema": "Máximos y mínimos relativos",
+      "grafico": "f",
+      "texto": "En (−4; −2) la gráfica pasa de ir horizontal a crecer. ¿Es un mínimo relativo?",
+      "opciones": [
+        "No: no pasa de bajar a subir, pasa de constante a creciente",
+        "Sí, porque es el punto más bajo de ese tramo",
+        "Sí, porque ahí cambia el comportamiento de la gráfica",
+        "No, porque ese punto no pertenece al dominio"
+      ],
+      "correcta": 0,
+      "resaltar": { "pts": [[-4, -2]], "guides": false },
+      "explicacion": "Para ser mínimo relativo, antes tiene que bajar y después subir (como un valle). Acá antes era constante, no bajaba. Por eso (−4; −2) no es mínimo (ni máximo), aunque sea un punto donde cambia el comportamiento."
+    },
+    {
+      "tema": "Notación",
+      "grafico": "f",
+      "texto": "¿Qué símbolos van siempre con −∞ y +∞ en un intervalo?",
+      "opciones": ["Paréntesis, nunca corchetes", "Corchetes, nunca paréntesis", "Depende de si el número es positivo o negativo", "Llaves, como los ceros"],
+      "correcta": 0,
+      "explicacion": "El infinito no es un número al que se llegue, así que siempre va con paréntesis: ( o )."
+    },
+    {
+      "tema": "Notación",
+      "grafico": "f",
+      "texto": "¿Quién usa llaves { } en vez de paréntesis o corchetes?",
+      "opciones": ["Los ceros (raíces), porque son valores sueltos de x", "El dominio, porque es un intervalo", "La imagen, porque son todos los y", "El crecimiento, porque es un intervalo"],
+      "correcta": 0,
+      "explicacion": "Las llaves son para números sueltos, no para tramos. De toda la tabla, los únicos valores sueltos son los ceros."
+    },
+    {
+      "tema": "Notación",
+      "grafico": "f",
+      "texto": "¿Cuándo un extremo de un intervalo lleva corchete [ ] en vez de paréntesis ( )?",
+      "opciones": [
+        "Cuando ese punto sí pertenece a la función (círculo lleno)",
+        "Cuando ese punto es el más alto de todo el gráfico",
+        "Siempre, en cualquier intervalo",
+        "Cuando el valor tiene decimales"
+      ],
+      "correcta": 0,
+      "resaltar": { "pts": [[3, -4]], "guides": false },
+      "explicacion": "Corchete = el punto sí entra (círculo lleno), como el mínimo acá: por eso la imagen se escribe [−4; +∞). Paréntesis = no entra (círculo vacío), o directamente no corresponde, como en positividad, negatividad y crecimiento."
+    },
+    {
+      "tema": "De la descripción al gráfico",
+      "texto": "Una función cumple todo esto: Dominio = (−∞; +∞), C⁰ = {−2; 2}, Ordenada al origen = (0; −4), Mínimo relativo en (0; −4), decreciente en (−∞; 0) y creciente en (0; +∞). ¿Cuál de estos gráficos es?",
+      "opcionesGraficos": ["rv1_correct", "rv1_b", "rv1_c", "rv1_d"],
+      "correcta": 0,
+      "explicacion": "Tiene que cortar el eje x justo en −2 y 2, cortar el eje y en −4, y tener su punto más bajo exactamente en (0; −4): baja hasta ahí y después sube. Las otras opciones mueven el mínimo de lugar, o tienen un máximo en vez de un mínimo."
+    },
+    {
+      "tema": "De la descripción al gráfico",
+      "texto": "Otra función cumple esto: Dominio = [−5; 5], único cero en C⁰ = {1}, decreciente en todo su dominio, y no tiene ningún máximo ni mínimo relativo. ¿Cuál de estos gráficos es?",
+      "opcionesGraficos": ["rv2_correct", "rv2_b", "rv2_c", "rv2_d"],
+      "correcta": 0,
+      "explicacion": "Tiene que bajar de principio a fin, sin ningún valle ni loma en el medio, y cruzar el eje x en x = 1. Si sube en vez de bajar, si cruza el eje en otro punto, o si tiene un mínimo en el medio, no cumple con la descripción."
+    }
+  ]
+}

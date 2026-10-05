@@ -1,5 +1,17 @@
 [
  {
+  "id": "clase-03",
+  "titulo": "Repaso de la clase 2",
+  "fecha": "2026-10-05",
+  "descripcion": "Positividad, negatividad, crecimiento y decrecimiento, a partir del gráfico de una función."
+ },
+ {
+  "id": "clase-02",
+  "titulo": "Análisis de funciones",
+  "fecha": "2026-10-05",
+  "descripcion": "Dominio, imagen, ceros, ordenada, signo, crecimiento y extremos, leyendo el gráfico de una función."
+ },
+ {
   "id": "clase-01",
   "titulo": "Repaso de hoy",
   "fecha": "2026-09-30",

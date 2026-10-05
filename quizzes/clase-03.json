@@ -1,0 +1,166 @@
+{
+  "id": "clase-03",
+  "titulo": "Repaso de la clase 2",
+  "fecha": "2026-10-05",
+  "descripcion": "Positividad, negatividad, crecimiento y decrecimiento, a partir del gráfico de una función.",
+  "temas": [
+    "Positividad y negatividad",
+    "Crecimiento y decrecimiento",
+    "De la descripción al gráfico"
+  ],
+  "consejos": {
+    "Positividad y negatividad": "Positiva = arriba del eje x. Negativa = abajo. Fijate bien dónde cruza el eje x (los ceros): ahí cambia de signo, y esos puntos no entran en ningún conjunto, por eso van con paréntesis.",
+    "Crecimiento y decrecimiento": "Mirá la gráfica de izquierda a derecha: si sube es creciente, si baja es decreciente. No lo confundas con el signo (arriba o abajo del eje x): son cosas distintas. Una función puede estar creciendo y ser negativa al mismo tiempo.",
+    "De la descripción al gráfico": "Fijate en el sentido (sube o baja) y en dónde cruza el eje x, y buscá el gráfico que cumpla las dos cosas a la vez, no solo una."
+  },
+  "graficos": {
+    "g1": {
+      "xr": [-6, 6],
+      "yr": [-5, 5],
+      "cross": true,
+      "pts": [[-6, -4], [-2, 4], [2, -4], [6, 4]],
+      "mk": [[-4, 0, "c"], [0, 0, "c"], [4, 0, "c"], [-2, 4, "c"], [2, -4, "c"]]
+    },
+    "g2": {
+      "xr": [-6, 6],
+      "yr": [-5, 5],
+      "cross": true,
+      "pts": [[-6, 4], [-2, -4], [6, 4]],
+      "mk": [[-4, 0, "c"], [2, 0, "c"], [-2, -4, "c"]]
+    },
+    "rev1_a": {
+      "xr": [-6, 6], "yr": [-5, 5], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, -2], [6, 4]]
+    },
+    "rev1_b": {
+      "xr": [-6, 6], "yr": [-5, 5], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, 2], [6, -4]]
+    },
+    "rev1_c": {
+      "xr": [-6, 6], "yr": [-5, 5], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, -4], [6, 2]]
+    },
+    "rev1_d": {
+      "xr": [-6, 6], "yr": [-5, 5], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, -2], [-1, 2], [2, -2], [6, 4]]
+    },
+    "rev2_a": {
+      "xr": [-6, 6], "yr": [-4, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, 3], [-1, -2], [6, 5]]
+    },
+    "rev2_b": {
+      "xr": [-6, 6], "yr": [-4, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, -3], [-1, 2], [6, -5]]
+    },
+    "rev2_c": {
+      "xr": [-6, 6], "yr": [-4, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, 4], [0, -2], [6, 4]]
+    },
+    "rev2_d": {
+      "xr": [-6, 6], "yr": [-4, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, 3], [-3, -3], [0, 3], [3, -3], [6, 3]]
+    }
+  },
+  "preguntas": [
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "g1",
+      "texto": "Esta función cambia de signo varias veces. ¿Cuál es su conjunto de positividad?",
+      "opciones": ["C⁺ = (−4; 0) ∪ (4; +∞)", "C⁺ = (−∞; −4) ∪ (0; 4)", "C⁺ = (−4; 4)", "C⁺ = [−4; 0] ∪ [4; +∞)"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-4, 0], [4, 6]], "label": "Positivo (arriba del eje x)" },
+      "explicacion": "Positiva = arriba del eje x. Son dos tramos: entre −4 y 0 (pasando por el máximo), y desde 4 hacia la derecha. Los ceros no entran."
+    },
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "g1",
+      "texto": "¿Y el conjunto de negatividad de esta misma función?",
+      "opciones": ["C⁻ = (−∞; −4) ∪ (0; 4)", "C⁻ = (−4; 0) ∪ (4; +∞)", "C⁻ = (0; 4)", "C⁻ = [−∞; −4] ∪ [0; 4]"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-6, -4], [0, 4]], "label": "Negativo (debajo del eje x)" },
+      "explicacion": "Negativa = debajo del eje x: antes de −4, y entre 0 y 4 (pasando por el mínimo). Son dos tramos separados por los ceros."
+    },
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "g2",
+      "texto": "Esta otra función tiene un solo valle. ¿Cuál es su conjunto de positividad?",
+      "opciones": ["C⁺ = (−∞; −4) ∪ (2; +∞)", "C⁺ = (−4; 2)", "C⁺ = (−∞; −4] ∪ [2; +∞)", "C⁺ = (−6; −4) ∪ (2; 6)"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-6, -4], [2, 6]], "label": "Positivo (arriba del eje x)" },
+      "explicacion": "Antes de −4 y después de 2 la gráfica está arriba del eje x. Ojo: los bordes del dibujo (−6 y 6) no son el final de la función, solo donde se corta la hoja; el dominio sigue siendo todos los reales."
+    },
+    {
+      "tema": "Positividad y negatividad",
+      "grafico": "g2",
+      "texto": "¿Y su conjunto de negatividad?",
+      "opciones": ["C⁻ = (−4; 2)", "C⁻ = (−∞; −4) ∪ (2; +∞)", "C⁻ = [−4; 2]", "C⁻ = (−4; 2) ∪ (2; +∞)"],
+      "correcta": 0,
+      "resaltar": { "dom": [-4, 2], "label": "Negativo (debajo del eje x)" },
+      "explicacion": "Entre −4 y 2 la gráfica queda por debajo del eje x: ahí pasa el mínimo."
+    },
+    {
+      "tema": "Crecimiento y decrecimiento",
+      "grafico": "g1",
+      "texto": "Volviendo a la primera función (la del zigzag): ¿en qué intervalos es creciente?",
+      "opciones": ["I↑ = (−∞; −2) ∪ (2; +∞)", "I↑ = (−2; 2)", "I↑ = (−4; 0) ∪ (4; +∞)", "I↑ = [−6; −2] ∪ [2; 6]"],
+      "correcta": 0,
+      "resaltar": { "dom": [[-6, -2], [2, 6]], "label": "Creciente (sube)" },
+      "explicacion": "Creciente = la gráfica sube de izquierda a derecha. Pasa antes de −2 (hasta el máximo) y después de 2 (desde el mínimo)."
+    },
+    {
+      "tema": "Crecimiento y decrecimiento",
+      "grafico": "g1",
+      "texto": "¿Y dónde es decreciente?",
+      "opciones": ["I↓ = (−2; 2)", "I↓ = (−∞; −2) ∪ (2; +∞)", "I↓ = (−4; 0) ∪ (4; +∞)", "I↓ = [−2; 2]"],
+      "correcta": 0,
+      "resaltar": { "dom": [-2, 2], "label": "Decrece (baja)" },
+      "explicacion": "Decreciente = baja. Pasa en un solo tramo: del máximo (−2; 4) al mínimo (2; −4)."
+    },
+    {
+      "tema": "Crecimiento y decrecimiento",
+      "grafico": "g2",
+      "texto": "¿En qué intervalo es creciente la función del valle único?",
+      "opciones": ["I↑ = (−2; +∞)", "I↑ = (−∞; −2)", "I↑ = (2; +∞)", "I↑ = (−6; −2)"],
+      "correcta": 0,
+      "resaltar": { "dom": [-2, 6], "label": "Creciente (sube)" },
+      "explicacion": "Después del mínimo (−2; −4) la gráfica sube para siempre. I↑ = (−2; +∞)."
+    },
+    {
+      "tema": "Crecimiento y decrecimiento",
+      "grafico": "g2",
+      "texto": "¿Y dónde es decreciente?",
+      "opciones": ["I↓ = (−∞; −2)", "I↓ = (−2; +∞)", "I↓ = (−6; −2)", "I↓ = (−4; 2)"],
+      "correcta": 0,
+      "resaltar": { "dom": [-6, -2], "label": "Decrece (baja)" },
+      "explicacion": "Antes de llegar al mínimo en (−2; −4), la gráfica viene bajando. I↓ = (−∞; −2)."
+    },
+    {
+      "tema": "Crecimiento y decrecimiento",
+      "grafico": "g1",
+      "texto": "En el tramo (−∞; −4) esta función es negativa. ¿Eso significa que también es decreciente ahí?",
+      "opciones": [
+        "No: en ese tramo es creciente, aunque sea negativa (va subiendo hacia el cero)",
+        "Sí, porque es negativa",
+        "Sí, antes de un cero la función siempre decrece",
+        "No se puede saber sin más datos"
+      ],
+      "correcta": 0,
+      "resaltar": { "dom": [-6, -4], "label": "Negativo, pero creciente" },
+      "explicacion": "El signo (positiva o negativa) y el crecimiento son cosas distintas. Acá, antes de −4 la función es negativa, pero va subiendo hacia 0: es creciente. No todo lo negativo es decreciente, ni todo lo positivo es creciente."
+    },
+    {
+      "tema": "De la descripción al gráfico",
+      "texto": "Una función cumple: es creciente en todo su dominio (−∞; +∞), con C⁻ = (−∞; −2) y C⁺ = (−2; +∞). ¿Cuál de estos gráficos es?",
+      "opcionesGraficos": ["rev1_a", "rev1_b", "rev1_c", "rev1_d"],
+      "correcta": 0,
+      "explicacion": "Tiene que subir todo el tiempo sin ningún bache, cruzando el eje x justo en x = −2: negativa antes, positiva después. Si baja, si cruza en otro punto, o si tiene un sube-y-baja en el medio, no cumple con la descripción."
+    },
+    {
+      "tema": "De la descripción al gráfico",
+      "texto": "Otra función cumple: decreciente en (−∞; −1), creciente en (−1; +∞), y su conjunto de negatividad es C⁻ = (−3; 1). ¿Cuál de estos gráficos es?",
+      "opcionesGraficos": ["rev2_a", "rev2_b", "rev2_c", "rev2_d"],
+      "correcta": 0,
+      "explicacion": "Tiene que bajar hasta x = −1 y a partir de ahí subir, cruzando el eje x justo en −3 y en 1 (negativa solo en el medio, entre esos dos ceros). Si tiene el mínimo en otro lado, si es al revés (una loma en vez de un valle), o si tiene más de un vaivén, no cumple con la descripción."
+    }
+  ]
+}

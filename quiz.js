@@ -29,7 +29,8 @@ function graph(g){
   }
   if (g.xt) s += `<text class="tt" x="${(sx(x0) + sx(x1)) / 2}" y="${H - 4}" text-anchor="middle">${esc(g.xt)}</text>`;
   if (g.yt) s += `<text class="tt" transform="rotate(-90 12 ${H / 2})" x="12" y="${H / 2}" text-anchor="middle">${esc(g.yt)}</text>`;
-  if (hl.dom) s += `<line class="bd" x1="${sx(hl.dom[0])}" y1="${ay}" x2="${sx(hl.dom[1])}" y2="${ay}"/>`;
+  const domRanges = hl.dom ? (Array.isArray(hl.dom[0]) ? hl.dom : [hl.dom]) : [];
+  domRanges.forEach(r => s += `<line class="bd" x1="${sx(r[0])}" y1="${ay}" x2="${sx(r[1])}" y2="${ay}"/>`);
   if (hl.img) s += `<line class="bi" x1="${ax}" y1="${sy(hl.img[0])}" x2="${ax}" y2="${sy(hl.img[1])}"/>`;
   s += `<polyline class="ln" points="${g.pts.map(p => sx(p[0]) + "," + sy(p[1])).join(" ")}"/>`;
   if (g.dots) g.pts.forEach(p => s += `<circle class="dt" cx="${sx(p[0])}" cy="${sy(p[1])}" r="3.6"/>`);
@@ -144,8 +145,14 @@ function start(list){ queue = list; pos = 0; render(); window.scrollTo(0, 0); }
 function render(){
   if (pos >= queue.length) return summary();
   const qi = queue[pos], q = Q[qi];
-  order = shuffle(q.opciones.map((_, i) => i));
+  const isGraphOpts = !!q.opcionesGraficos;
+  const rawOpts = isGraphOpts ? q.opcionesGraficos : q.opciones;
+  order = shuffle(rawOpts.map((_, i) => i));
   locked = false;
+  const optHtml = order.map((oi, k) => isGraphOpts
+    ? `<button class="opt og" data-k="${k}"><span class="let t${k % 4}">${"ABCDEF"[k]}</span><div class="mini-gr">${graph(QZ.graficos[rawOpts[oi]])}</div></button>`
+    : `<button class="opt" data-k="${k}"><span class="let t${k % 4}">${"ABCDEF"[k]}</span><span>${esc(q.opciones[oi])}</span></button>`
+  ).join("");
   app.innerHTML = `
     ${TOP}
     <div class="prog"><div style="width:${pos / queue.length * 100}%"></div></div>
@@ -153,7 +160,7 @@ function render(){
     <div class="card" id="card" tabindex="-1">
       <p class="q">${esc(q.texto)}</p>
       ${q.grafico ? `<div id="gw">${graph(QZ.graficos[q.grafico])}</div><div id="lg"></div>` : ""}
-      <div id="opts">${order.map((oi, k) => `<button class="opt" data-k="${k}"><span class="let t${k % 4}">${"ABCDEF"[k]}</span><span>${esc(q.opciones[oi])}</span></button>`).join("")}</div>
+      <div id="opts" class="${isGraphOpts ? "grid2" : ""}">${optHtml}</div>
       <div id="fb" aria-live="polite"></div>
     </div>`;
   document.querySelectorAll(".opt").forEach(b => b.onclick = () => answer(+b.dataset.k));
@@ -176,7 +183,7 @@ function answer(k){
   if (q.grafico && hl){
     document.getElementById("gw").innerHTML = graph(Object.assign({}, QZ.graficos[q.grafico], { hl }));
     if (hl.dom || hl.img){
-      document.getElementById("lg").innerHTML = `<div class="lg">${hl.dom ? '<span class="sw" style="background:var(--blue)"></span>Dominio (eje x)' : ""}${hl.img ? '<span class="sw" style="background:var(--green)"></span>Imagen (eje y)' : ""}</div>`;
+      document.getElementById("lg").innerHTML = `<div class="lg">${hl.dom ? `<span class="sw" style="background:var(--blue)"></span>${esc(hl.label || "Dominio (eje x)")}` : ""}${hl.img ? '<span class="sw" style="background:var(--green)"></span>Imagen (eje y)' : ""}</div>`;
     }
   }
   const last = pos + 1 >= queue.length;

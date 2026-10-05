@@ -59,6 +59,13 @@ h1{font-family:var(--font-display);font-size:1.6rem;font-weight:700;margin:0 0 6
 .opt.bad{border-color:var(--bad);background:var(--bad-soft)}
 .opt.dim{opacity:.55}
 .opt[disabled]{cursor:default}
+#opts.grid2{display:flex;flex-direction:column;gap:10px}
+.opt.og{flex-direction:column;align-items:center;gap:4px;min-height:auto}
+.opt.og .mini-gr{width:100%}
+.opt.og .mini-gr .gr{max-width:260px;margin:2px auto 0;background:transparent}
+@media (min-width:560px){
+  #opts.grid2{display:grid;grid-template-columns:1fr 1fr}
+}
 .opt:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 #card:focus{outline:none}
 @media (prefers-reduced-motion: no-preference){
