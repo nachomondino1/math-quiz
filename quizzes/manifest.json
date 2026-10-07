@@ -1,5 +1,11 @@
 [
  {
+  "id": "parcial-01",
+  "titulo": "Parcial: todo el tema",
+  "fecha": "2026-10-07",
+  "descripcion": "Repaso a fondo de dominio, imagen, ceros, signo, crecimiento, extremos y notación, como un parcial (30 a 40 minutos)."
+ },
+ {
   "id": "clase-03",
   "titulo": "Repaso de la clase 2",
   "fecha": "2026-10-05",
