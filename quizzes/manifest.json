@@ -1,5 +1,11 @@
 [
  {
+  "id": "funcion-lineal",
+  "titulo": "Función lineal (y = mx + b)",
+  "fecha": "2026-10-16",
+  "descripcion": "Introducción a la pendiente y la ordenada al origen, en la fórmula y en el gráfico (10 minutos)."
+ },
+ {
   "id": "parcial-01",
   "titulo": "Parcial: todo el tema",
   "fecha": "2026-10-07",
