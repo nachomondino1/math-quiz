@@ -2,10 +2,14 @@
 
 Sitio estático (sin build). El motor está en `quiz.html` + `quiz.js` y cada clase es un JSON en `quizzes/`.
 
-## Agregar el quiz de una clase nueva
-1. Copiá `quizzes/clase-01.json` a `quizzes/clase-02.json` y editá las preguntas.
-2. Agregá una entrada arriba de todo en `quizzes/manifest.json` (`id` = nombre del archivo sin `.json`).
-3. `git push`. En un minuto está online en `https://<usuario>.github.io/<repo>/quiz.html?q=clase-02`.
+## Estructura de carpetas
+Los quizzes se agrupan por tema: `quizzes/<carpeta>/<id>.json` (por ejemplo `quizzes/funcion-lineal/funcion-lineal.json`). Las carpetas y los quizzes se declaran en `quizzes/manifest.json`.
+
+## Agregar un quiz nuevo
+1. Copiá un JSON de la carpeta del tema (o creá la carpeta nueva) y editá las preguntas. El `titulo` va corto: los temas que toca.
+2. En `quizzes/manifest.json`, agregá una entrada en `quizzes` con `id` (nombre del archivo sin `.json`), `carpeta`, `titulo`, `fecha` y `descripcion`.
+3. Si es un tema nuevo, agregá la carpeta en `carpetas` (`id`, `titulo`, `descripcion`). Una carpeta sin quizzes se muestra como "Próximamente".
+4. `git push`. Queda en `https://<usuario>.github.io/<repo>/quiz.html?q=<id>`.
 
 ## Formato del JSON
 - `graficos`: gráficos reutilizables (`pts` = vértices; `cross: true` = ejes cruzados en 0; `mk` = puntos en los extremos, `"c"` lleno / `"o"` círculo vacío; `xfmt: "hora"` = eje x como 8:00).

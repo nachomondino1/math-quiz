@@ -112,7 +112,10 @@ async function load(){
   const id = new URLSearchParams(location.search).get("q") || "";
   if (!/^[a-z0-9-]+$/.test(id)) return fail("Falta indicar qué quiz abrir.");
   try {
-    const r = await fetch(`quizzes/${id}.json`, { cache: "no-cache" });
+    const man = await (await fetch("quizzes/manifest.json", { cache: "no-cache" })).json();
+    const meta = man.quizzes.find(q => q.id === id);
+    if (!meta) throw new Error("sin entrada");
+    const r = await fetch(`quizzes/${meta.carpeta}/${id}.json`, { cache: "no-cache" });
     if (!r.ok) throw new Error(r.status);
     QZ = await r.json();
   } catch (e) { return fail("No encontré ese quiz."); }
