@@ -18,6 +18,13 @@
  ],
  "quizzes": [
   {
+   "id": "funcion-lineal-2",
+   "carpeta": "funcion-lineal",
+   "titulo": "Ecuaciones, paralelas y problemas",
+   "fecha": "2026-11-02",
+   "descripcion": "Pendiente con dos puntos, armar la ecuación, ceros, paralelas y perpendiculares, intersección y problemas con contexto (12 minutos)."
+  },
+  {
    "id": "funcion-lineal",
    "carpeta": "funcion-lineal",
    "titulo": "Pendiente y ordenada al origen",
