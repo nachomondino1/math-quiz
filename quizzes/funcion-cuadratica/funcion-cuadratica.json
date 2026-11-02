@@ -1,0 +1,1377 @@
+{
+ "id": "funcion-cuadratica",
+ "titulo": "Función cuadrática: introducción",
+ "fecha": "2026-11-09",
+ "descripcion": "Qué es una parábola: reconocer la función, hacia dónde abre, vértice, ordenada al origen y elegir el gráfico a partir de la ecuación.",
+ "temas": [
+  "Reconocer la función cuadrática",
+  "Concavidad y vértice",
+  "Ordenada y valores",
+  "Leer el gráfico",
+  "De la ecuación al gráfico"
+ ],
+ "consejos": {
+  "Reconocer la función cuadrática": "Cuadrática = tiene un término con x² y nada con potencia mayor. Su gráfico es una parábola.",
+  "Concavidad y vértice": "El signo del número que acompaña a x² decide: positivo, abre hacia arriba (tiene mínimo); negativo, abre hacia abajo (tiene máximo). El vértice es ese punto más bajo o más alto.",
+  "Ordenada y valores": "La ordenada al origen es el término suelto: el valor de y cuando x = 0. Para hallar y, reemplazá x y cuidá los signos: el cuadrado de un negativo es positivo.",
+  "Leer el gráfico": "Vértice: donde la parábola cambia de sentido (se escribe (x; y)). Ceros: donde cruza el eje x, entre llaves. Imagen: los valores de y que alcanza.",
+  "De la ecuación al gráfico": "Revisá tres cosas, una por una: hacia dónde abre (signo de x²), dónde está el vértice (término suelto) y qué tan abierta es. Las opciones suelen fallar en una sola."
+ },
+ "graficos": {
+  "p1": {
+   "xr": [
+    -4,
+    4
+   ],
+   "yr": [
+    -5,
+    9
+   ],
+   "cross": true,
+   "pts": [
+    [
+     -3.5,
+     8.25
+    ],
+    [
+     -3,
+     5
+    ],
+    [
+     -2.5,
+     2.25
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1.5,
+     -1.75
+    ],
+    [
+     -1,
+     -3
+    ],
+    [
+     -0.5,
+     -3.75
+    ],
+    [
+     0,
+     -4
+    ],
+    [
+     0.5,
+     -3.75
+    ],
+    [
+     1,
+     -3
+    ],
+    [
+     1.5,
+     -1.75
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2.5,
+     2.25
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3.5,
+     8.25
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     -4,
+     "c"
+    ],
+    [
+     -2,
+     0,
+     "c"
+    ],
+    [
+     2,
+     0,
+     "c"
+    ]
+   ]
+  },
+  "p2": {
+   "xr": [
+    -3,
+    5
+   ],
+   "yr": [
+    -6,
+    5
+   ],
+   "cross": true,
+   "pts": [
+    [
+     -2,
+     -5
+    ],
+    [
+     -1.5,
+     -2.25
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -0.5,
+     1.75
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0.5,
+     3.75
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1.5,
+     3.75
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2.5,
+     1.75
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3.5,
+     -2.25
+    ],
+    [
+     4,
+     -5
+    ]
+   ],
+   "mk": [
+    [
+     1,
+     4,
+     "c"
+    ],
+    [
+     0,
+     3,
+     "c"
+    ]
+   ]
+  },
+  "a_correct": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -2.75,
+     5.562
+    ],
+    [
+     -2.5,
+     4.25
+    ],
+    [
+     -2.25,
+     3.062
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1.75,
+     1.062
+    ],
+    [
+     -1.5,
+     0.25
+    ],
+    [
+     -1.25,
+     -0.438
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     -0.75,
+     -1.438
+    ],
+    [
+     -0.5,
+     -1.75
+    ],
+    [
+     -0.25,
+     -1.938
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0.25,
+     -1.938
+    ],
+    [
+     0.5,
+     -1.75
+    ],
+    [
+     0.75,
+     -1.438
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1.25,
+     -0.438
+    ],
+    [
+     1.5,
+     0.25
+    ],
+    [
+     1.75,
+     1.062
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2.25,
+     3.062
+    ],
+    [
+     2.5,
+     4.25
+    ],
+    [
+     2.75,
+     5.562
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     -2,
+     "c"
+    ]
+   ]
+  },
+  "a_wrong_sign": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -2,
+     -6
+    ],
+    [
+     -1.75,
+     -5.062
+    ],
+    [
+     -1.5,
+     -4.25
+    ],
+    [
+     -1.25,
+     -3.562
+    ],
+    [
+     -1,
+     -3
+    ],
+    [
+     -0.75,
+     -2.562
+    ],
+    [
+     -0.5,
+     -2.25
+    ],
+    [
+     -0.25,
+     -2.062
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0.25,
+     -2.062
+    ],
+    [
+     0.5,
+     -2.25
+    ],
+    [
+     0.75,
+     -2.562
+    ],
+    [
+     1,
+     -3
+    ],
+    [
+     1.25,
+     -3.562
+    ],
+    [
+     1.5,
+     -4.25
+    ],
+    [
+     1.75,
+     -5.062
+    ],
+    [
+     2,
+     -6
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     -2,
+     "c"
+    ]
+   ]
+  },
+  "a_wrong_c": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -2,
+     6
+    ],
+    [
+     -1.75,
+     5.062
+    ],
+    [
+     -1.5,
+     4.25
+    ],
+    [
+     -1.25,
+     3.562
+    ],
+    [
+     -1,
+     3
+    ],
+    [
+     -0.75,
+     2.562
+    ],
+    [
+     -0.5,
+     2.25
+    ],
+    [
+     -0.25,
+     2.062
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0.25,
+     2.062
+    ],
+    [
+     0.5,
+     2.25
+    ],
+    [
+     0.75,
+     2.562
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1.25,
+     3.562
+    ],
+    [
+     1.5,
+     4.25
+    ],
+    [
+     1.75,
+     5.062
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     2,
+     "c"
+    ]
+   ]
+  },
+  "a_wrong_mag": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -5.5,
+     5.562
+    ],
+    [
+     -5.25,
+     4.891
+    ],
+    [
+     -5,
+     4.25
+    ],
+    [
+     -4.75,
+     3.641
+    ],
+    [
+     -4.5,
+     3.062
+    ],
+    [
+     -4.25,
+     2.516
+    ],
+    [
+     -4,
+     2
+    ],
+    [
+     -3.75,
+     1.516
+    ],
+    [
+     -3.5,
+     1.062
+    ],
+    [
+     -3.25,
+     0.641
+    ],
+    [
+     -3,
+     0.25
+    ],
+    [
+     -2.75,
+     -0.109
+    ],
+    [
+     -2.5,
+     -0.438
+    ],
+    [
+     -2.25,
+     -0.734
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -1.75,
+     -1.234
+    ],
+    [
+     -1.5,
+     -1.438
+    ],
+    [
+     -1.25,
+     -1.609
+    ],
+    [
+     -1,
+     -1.75
+    ],
+    [
+     -0.75,
+     -1.859
+    ],
+    [
+     -0.5,
+     -1.938
+    ],
+    [
+     -0.25,
+     -1.984
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0.25,
+     -1.984
+    ],
+    [
+     0.5,
+     -1.938
+    ],
+    [
+     0.75,
+     -1.859
+    ],
+    [
+     1,
+     -1.75
+    ],
+    [
+     1.25,
+     -1.609
+    ],
+    [
+     1.5,
+     -1.438
+    ],
+    [
+     1.75,
+     -1.234
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     2.25,
+     -0.734
+    ],
+    [
+     2.5,
+     -0.438
+    ],
+    [
+     2.75,
+     -0.109
+    ],
+    [
+     3,
+     0.25
+    ],
+    [
+     3.25,
+     0.641
+    ],
+    [
+     3.5,
+     1.062
+    ],
+    [
+     3.75,
+     1.516
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4.25,
+     2.516
+    ],
+    [
+     4.5,
+     3.062
+    ],
+    [
+     4.75,
+     3.641
+    ],
+    [
+     5,
+     4.25
+    ],
+    [
+     5.25,
+     4.891
+    ],
+    [
+     5.5,
+     5.562
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     -2,
+     "c"
+    ]
+   ]
+  },
+  "b_correct": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -3,
+     -6
+    ],
+    [
+     -2.75,
+     -4.562
+    ],
+    [
+     -2.5,
+     -3.25
+    ],
+    [
+     -2.25,
+     -2.062
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     -1.75,
+     -0.062
+    ],
+    [
+     -1.5,
+     0.75
+    ],
+    [
+     -1.25,
+     1.438
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     -0.75,
+     2.438
+    ],
+    [
+     -0.5,
+     2.75
+    ],
+    [
+     -0.25,
+     2.938
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0.25,
+     2.938
+    ],
+    [
+     0.5,
+     2.75
+    ],
+    [
+     0.75,
+     2.438
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1.25,
+     1.438
+    ],
+    [
+     1.5,
+     0.75
+    ],
+    [
+     1.75,
+     -0.062
+    ],
+    [
+     2,
+     -1
+    ],
+    [
+     2.25,
+     -2.062
+    ],
+    [
+     2.5,
+     -3.25
+    ],
+    [
+     2.75,
+     -4.562
+    ],
+    [
+     3,
+     -6
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     3,
+     "c"
+    ]
+   ]
+  },
+  "b_wrong_sign": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -1.5,
+     5.25
+    ],
+    [
+     -1.25,
+     4.562
+    ],
+    [
+     -1,
+     4
+    ],
+    [
+     -0.75,
+     3.562
+    ],
+    [
+     -0.5,
+     3.25
+    ],
+    [
+     -0.25,
+     3.062
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0.25,
+     3.062
+    ],
+    [
+     0.5,
+     3.25
+    ],
+    [
+     0.75,
+     3.562
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1.25,
+     4.562
+    ],
+    [
+     1.5,
+     5.25
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     3,
+     "c"
+    ]
+   ]
+  },
+  "b_wrong_c": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -1.5,
+     -5.25
+    ],
+    [
+     -1.25,
+     -4.562
+    ],
+    [
+     -1,
+     -4
+    ],
+    [
+     -0.75,
+     -3.562
+    ],
+    [
+     -0.5,
+     -3.25
+    ],
+    [
+     -0.25,
+     -3.062
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0.25,
+     -3.062
+    ],
+    [
+     0.5,
+     -3.25
+    ],
+    [
+     0.75,
+     -3.562
+    ],
+    [
+     1,
+     -4
+    ],
+    [
+     1.25,
+     -4.562
+    ],
+    [
+     1.5,
+     -5.25
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     -3,
+     "c"
+    ]
+   ]
+  },
+  "b_wrong_mag": {
+   "xr": [
+    -6,
+    6
+   ],
+   "yr": [
+    -6,
+    6
+   ],
+   "xs": 2,
+   "ys": 2,
+   "cross": true,
+   "h": 170,
+   "pts": [
+    [
+     -6,
+     -6
+    ],
+    [
+     -5.75,
+     -5.266
+    ],
+    [
+     -5.5,
+     -4.562
+    ],
+    [
+     -5.25,
+     -3.891
+    ],
+    [
+     -5,
+     -3.25
+    ],
+    [
+     -4.75,
+     -2.641
+    ],
+    [
+     -4.5,
+     -2.062
+    ],
+    [
+     -4.25,
+     -1.516
+    ],
+    [
+     -4,
+     -1
+    ],
+    [
+     -3.75,
+     -0.516
+    ],
+    [
+     -3.5,
+     -0.062
+    ],
+    [
+     -3.25,
+     0.359
+    ],
+    [
+     -3,
+     0.75
+    ],
+    [
+     -2.75,
+     1.109
+    ],
+    [
+     -2.5,
+     1.438
+    ],
+    [
+     -2.25,
+     1.734
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1.75,
+     2.234
+    ],
+    [
+     -1.5,
+     2.438
+    ],
+    [
+     -1.25,
+     2.609
+    ],
+    [
+     -1,
+     2.75
+    ],
+    [
+     -0.75,
+     2.859
+    ],
+    [
+     -0.5,
+     2.938
+    ],
+    [
+     -0.25,
+     2.984
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0.25,
+     2.984
+    ],
+    [
+     0.5,
+     2.938
+    ],
+    [
+     0.75,
+     2.859
+    ],
+    [
+     1,
+     2.75
+    ],
+    [
+     1.25,
+     2.609
+    ],
+    [
+     1.5,
+     2.438
+    ],
+    [
+     1.75,
+     2.234
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2.25,
+     1.734
+    ],
+    [
+     2.5,
+     1.438
+    ],
+    [
+     2.75,
+     1.109
+    ],
+    [
+     3,
+     0.75
+    ],
+    [
+     3.25,
+     0.359
+    ],
+    [
+     3.5,
+     -0.062
+    ],
+    [
+     3.75,
+     -0.516
+    ],
+    [
+     4,
+     -1
+    ],
+    [
+     4.25,
+     -1.516
+    ],
+    [
+     4.5,
+     -2.062
+    ],
+    [
+     4.75,
+     -2.641
+    ],
+    [
+     5,
+     -3.25
+    ],
+    [
+     5.25,
+     -3.891
+    ],
+    [
+     5.5,
+     -4.562
+    ],
+    [
+     5.75,
+     -5.266
+    ],
+    [
+     6,
+     -6
+    ]
+   ],
+   "mk": [
+    [
+     0,
+     3,
+     "c"
+    ]
+   ]
+  }
+ },
+ "preguntas": [
+  {
+   "tema": "Reconocer la función cuadrática",
+   "texto": "¿Cuál de estas es una función cuadrática?",
+   "opciones": [
+    "y = 2x² − 5",
+    "y = 2x − 5",
+    "y = x³ − 5",
+    "y = 5"
+   ],
+   "correcta": 0,
+   "explicacion": "Una función cuadrática tiene un término con x² (y ninguna potencia mayor). y = 2x − 5 es lineal, y = x³ − 5 tiene x³, e y = 5 es constante."
+  },
+  {
+   "tema": "Concavidad y vértice",
+   "texto": "En y = x² − 4 el número que acompaña a x² es positivo (a = 1). ¿Cómo es su gráfico, que se llama parábola?",
+   "opciones": [
+    "Abre hacia arriba y tiene un punto más bajo (mínimo)",
+    "Abre hacia abajo y tiene un punto más alto (máximo)",
+    "Es una recta que sube",
+    "Es una recta horizontal"
+   ],
+   "correcta": 0,
+   "explicacion": "Si el número que acompaña a x² es positivo, la parábola abre hacia arriba, como una U, y su punto más bajo es el vértice."
+  },
+  {
+   "tema": "Concavidad y vértice",
+   "texto": "¿Y en y = −2x² + 3, donde el número que acompaña a x² es negativo (a = −2)?",
+   "opciones": [
+    "Abre hacia abajo y tiene un punto más alto (máximo)",
+    "Abre hacia arriba y tiene un punto más bajo (mínimo)",
+    "Es una recta que baja",
+    "No se puede saber sin graficarla"
+   ],
+   "correcta": 0,
+   "explicacion": "Si el número que acompaña a x² es negativo, la parábola abre hacia abajo, como una ∩, y su punto más alto es el vértice."
+  },
+  {
+   "tema": "Ordenada y valores",
+   "texto": "¿Cuál es la ordenada al origen de y = x² + 2x − 5?",
+   "opciones": [
+    "(0; −5)",
+    "(0; 2)",
+    "(0; 1)",
+    "(−5; 0)"
+   ],
+   "correcta": 0,
+   "explicacion": "Es el valor de y cuando x = 0: y = 0² + 2·0 − 5 = −5. Es el término suelto, sin x. El punto es (0; −5)."
+  },
+  {
+   "tema": "Ordenada y valores",
+   "texto": "En y = x² − 2x, ¿cuánto vale y cuando x = −1?",
+   "opciones": [
+    "y = 3",
+    "y = 1",
+    "y = −3",
+    "y = −1"
+   ],
+   "correcta": 0,
+   "explicacion": "Reemplazá x por −1: (−1)² − 2·(−1) = 1 + 2 = 3. Ojo: (−1)² es 1, no −1, porque el cuadrado de un negativo es positivo."
+  },
+  {
+   "tema": "Leer el gráfico",
+   "grafico": "p1",
+   "texto": "Esta parábola es la de y = x² − 4. ¿Cuál es su vértice?",
+   "opciones": [
+    "(0; −4)",
+    "(−4; 0)",
+    "(2; 0)",
+    "(0; 4)"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      0,
+      -4
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "El vértice es el punto donde la parábola cambia de sentido: acá, el más bajo. Está en (0; −4)."
+  },
+  {
+   "tema": "Leer el gráfico",
+   "grafico": "p1",
+   "texto": "¿Cuáles son los ceros de esta función?",
+   "opciones": [
+    "C⁰ = {−2; 2}",
+    "C⁰ = {−4}",
+    "C⁰ = {0; −4}",
+    "C⁰ = (−2; 2)"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      -2,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "Los ceros son los x donde la parábola cruza el eje x: −2 y 2. Van entre llaves, porque son valores sueltos."
+  },
+  {
+   "tema": "Leer el gráfico",
+   "grafico": "p1",
+   "texto": "¿Cuál es la imagen de esta función?",
+   "opciones": [
+    "[−4; +∞)",
+    "(−∞; +∞)",
+    "[−4; 4]",
+    "(−∞; −4]"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "img": [
+     -4,
+     9
+    ]
+   },
+   "explicacion": "La imagen son los valores de y. El más bajo es −4 (el vértice, que entra: corchete) y hacia arriba la parábola sigue subiendo para siempre. Imagen = [−4; +∞)."
+  },
+  {
+   "tema": "Leer el gráfico",
+   "grafico": "p2",
+   "texto": "Esta parábola abre hacia abajo. ¿Cuál es su vértice y qué es?",
+   "opciones": [
+    "(1; 4), el máximo",
+    "(1; 4), el mínimo",
+    "(4; 1), el máximo",
+    "(0; 3), el máximo"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      1,
+      4
+     ]
+    ]
+   },
+   "explicacion": "El vértice es el punto donde cambia de sentido: acá pasa de subir a bajar, así que es el punto más alto (máximo): (1; 4). Se escribe primero x y después y."
+  },
+  {
+   "tema": "Leer el gráfico",
+   "grafico": "p2",
+   "texto": "¿Cuál es la ordenada al origen de esta misma parábola?",
+   "opciones": [
+    "(0; 3)",
+    "(0; 4)",
+    "(1; 4)",
+    "(3; 0)"
+   ],
+   "correcta": 0,
+   "resaltar": {
+    "pts": [
+     [
+      0,
+      3
+     ]
+    ],
+    "guides": false
+   },
+   "explicacion": "Es donde la parábola corta el eje y, cuando x = 0: (0; 3)."
+  },
+  {
+   "tema": "De la ecuación al gráfico",
+   "texto": "¿Cuál de estos gráficos corresponde a y = x² − 2?",
+   "opcionesGraficos": [
+    "a_correct",
+    "a_wrong_sign",
+    "a_wrong_c",
+    "a_wrong_mag"
+   ],
+   "correcta": 0,
+   "explicacion": "Tiene que abrir hacia arriba (x² positivo) y tener el vértice en (0; −2), porque el término suelto es −2. Las otras opciones abren hacia abajo, tienen el vértice en (0; 2) o son mucho más abiertas."
+  },
+  {
+   "tema": "De la ecuación al gráfico",
+   "texto": "¿Cuál de estos gráficos corresponde a y = −x² + 3?",
+   "opcionesGraficos": [
+    "b_correct",
+    "b_wrong_sign",
+    "b_wrong_c",
+    "b_wrong_mag"
+   ],
+   "correcta": 0,
+   "explicacion": "Tiene que abrir hacia abajo (−x²) y tener el vértice en (0; 3). Las otras opciones abren hacia arriba, tienen el vértice en (0; −3) o son mucho más abiertas."
+  }
+ ]
+}

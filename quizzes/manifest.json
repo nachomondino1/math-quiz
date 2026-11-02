@@ -6,6 +6,11 @@
    "descripcion": "y = mx + b: pendiente, ordenada y gráfico."
   },
   {
+   "id": "funcion-cuadratica",
+   "titulo": "Función cuadrática",
+   "descripcion": "Parábolas: vértice, ordenada, ceros y gráfico."
+  },
+  {
    "id": "analisis-de-funciones",
    "titulo": "Análisis de funciones",
    "descripcion": "Leer un gráfico: dominio, imagen, ceros, signo, crecimiento y extremos."
@@ -17,6 +22,13 @@
   }
  ],
  "quizzes": [
+  {
+   "id": "funcion-cuadratica",
+   "carpeta": "funcion-cuadratica",
+   "titulo": "Introducción a la parábola",
+   "fecha": "2026-11-09",
+   "descripcion": "Reconocer la función cuadrática, hacia dónde abre, vértice, ordenada al origen y elegir el gráfico a partir de la ecuación (12 minutos)."
+  },
   {
    "id": "funcion-lineal-2",
    "carpeta": "funcion-lineal",
