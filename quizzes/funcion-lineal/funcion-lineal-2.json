@@ -116,19 +116,19 @@
     },
     {
       "tema": "Problemas con contexto",
-      "texto": "Un taxi cobra $500 de bajada de bandera más $200 por kilómetro, o sea y = 200x + 500. ¿Qué representan m y b?",
+      "texto": "Para usar un monopatín eléctrico de alquiler, la app te cobra $500 por desbloquearlo y después $200 por cada minuto que lo usás. El costo total es y = 200x + 500, donde x son los minutos. ¿Qué representan m y b?",
       "opciones": [
-        "m = 200 es lo que cuesta cada kilómetro; b = 500 es lo que se paga apenas se sube",
-        "m = 500 es lo que cuesta cada kilómetro; b = 200 es lo que se paga apenas se sube",
-        "m = 200 es el total del viaje; b = 500 son los kilómetros",
+        "m = 200 es lo que cuesta cada minuto; b = 500 es lo que pagás apenas lo desbloqueás",
+        "m = 500 es lo que cuesta cada minuto; b = 200 es lo que pagás apenas lo desbloqueás",
+        "m = 200 es el costo total; b = 500 son los minutos",
         "m y b no tienen significado en este problema"
       ],
       "correcta": 0,
-      "explicacion": "La pendiente m es cuánto cambia y por cada unidad de x: $200 por kilómetro. La ordenada al origen b es el valor cuando x = 0: $500 al subir, antes de recorrer nada."
+      "explicacion": "La pendiente m es cuánto cambia y por cada unidad de x: $200 por cada minuto. La ordenada al origen b es el valor cuando x = 0: $500 por desbloquearlo, antes de usarlo un solo minuto."
     },
     {
       "tema": "Problemas con contexto",
-      "texto": "Con el mismo taxi (y = 200x + 500), ¿cuánto se paga por un viaje de 7 km?",
+      "texto": "Con el mismo monopatín (y = 200x + 500), ¿cuánto pagás si lo usás 7 minutos?",
       "opciones": ["$1.900", "$1.400", "$3.700", "$700"],
       "correcta": 0,
       "explicacion": "Reemplazá x = 7: y = 200·7 + 500 = 1.400 + 500 = $1.900."
