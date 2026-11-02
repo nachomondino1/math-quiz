@@ -2,24 +2,22 @@
   "id": "funcion-lineal-2",
   "titulo": "Función lineal 2: más a fondo",
   "fecha": "2026-11-02",
-  "descripcion": "Pendiente con dos puntos, armar la ecuación, ceros, rectas paralelas y perpendiculares, intersección y problemas con contexto.",
+  "descripcion": "Pendiente con dos puntos, armar la ecuación, puntos de la recta, problemas con contexto y elegir el gráfico a partir de la ecuación.",
   "temas": [
     "Pendiente entre dos puntos",
     "Escribir la ecuación",
     "Leer el gráfico",
-    "Ceros y puntos de la recta",
-    "Paralelas y perpendiculares",
-    "Intersección de rectas",
-    "Problemas con contexto"
+    "Puntos de la recta",
+    "Problemas con contexto",
+    "De la ecuación al gráfico"
   ],
   "consejos": {
     "Pendiente entre dos puntos": "m = (y₂ − y₁) / (x₂ − x₁): lo que cambia y dividido lo que cambia x. Restá en el mismo orden arriba y abajo.",
     "Escribir la ecuación": "Con m y un punto (x₀; y₀): reemplazalos en y = mx + b y despejá b. Con dos puntos: primero calculá m, después hallá b.",
     "Leer el gráfico": "Buscá dónde cruza el eje y (ése es b) y elegí dos puntos marcados para sacar m = rise/run. Si sube menos de lo que avanza, m es una fracción.",
-    "Ceros y puntos de la recta": "Cero: ponés y = 0 y despejás x. Para saber si un punto está en la recta, reemplazá x y fijate si te da el y del punto.",
-    "Paralelas y perpendiculares": "Paralelas: misma pendiente. Perpendiculares: pendientes opuestas e invertidas (si una es 2, la otra es −1/2).",
-    "Intersección de rectas": "Igualá las dos fórmulas para hallar x, y después reemplazá ese x en cualquiera de las dos para hallar y.",
-    "Problemas con contexto": "b es el valor inicial (lo que ya hay cuando x = 0) y m es cuánto cambia y por cada unidad de x."
+    "Puntos de la recta": "Para saber si un punto está en la recta, reemplazá su x en la fórmula y fijate si te da el y del punto.",
+    "Problemas con contexto": "b es el valor inicial (lo que ya hay cuando x = 0) y m es cuánto cambia y por cada unidad de x.",
+    "De la ecuación al gráfico": "Revisá tres cosas, una por una: dónde cruza el eje y (b), si sube o baja (signo de m) y qué tan inclinada está (tamaño de m). Las opciones suelen fallar en una sola."
   },
   "graficos": {
     "g1": {
@@ -29,21 +27,53 @@
       "pts": [[-4, -1], [6, 4]],
       "mk": [[-2, 0, "c"], [0, 1, "c"], [2, 2, "c"]]
     },
-    "m_correct": {
+    "a_correct": {
       "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
-      "pts": [[-4, -4], [6, 1]], "mk": [[0, -2, "c"], [4, 0, "c"]]
+      "pts": [[-4, -4], [6, 1]], "mk": [[0, -2, "c"]]
     },
-    "m_wrong_sign": {
+    "a_wrong_sign": {
       "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
       "pts": [[-6, 1], [4, -4]], "mk": [[0, -2, "c"]]
     },
-    "m_wrong_b": {
+    "a_wrong_b": {
       "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
       "pts": [[-6, -1], [6, 5]], "mk": [[0, 2, "c"]]
     },
-    "m_wrong_mag": {
+    "a_wrong_mag": {
       "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
       "pts": [[-4, -6], [6, 4]], "mk": [[0, -2, "c"]]
+    },
+    "b_correct": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-3, 6], [6, -3]], "mk": [[0, 3, "c"]]
+    },
+    "b_wrong_sign": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, -3], [3, 6]], "mk": [[0, 3, "c"]]
+    },
+    "b_wrong_b": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-6, 3], [3, -6]], "mk": [[0, -3, "c"]]
+    },
+    "b_wrong_mag": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-1.5, 6], [4.5, -6]], "mk": [[0, 3, "c"]]
+    },
+    "c_correct": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-1, -6], [5, 6]], "mk": [[0, -4, "c"]]
+    },
+    "c_wrong_sign": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, 6], [1, -6]], "mk": [[0, -4, "c"]]
+    },
+    "c_wrong_b": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-5, -6], [1, 6]], "mk": [[0, 4, "c"]]
+    },
+    "c_wrong_mag": {
+      "xr": [-6, 6], "yr": [-6, 6], "xs": 2, "ys": 2, "cross": true, "h": 170,
+      "pts": [[-4, -6], [6, -1]], "mk": [[0, -4, "c"]]
     }
   },
   "preguntas": [
@@ -78,39 +108,11 @@
       "explicacion": "Cruza el eje y en 1, entonces b = 1. De (0; 1) a (2; 2), y sube 1 mientras x avanza 2: m = 1/2. La ecuación es y = x/2 + 1."
     },
     {
-      "tema": "Ceros y puntos de la recta",
-      "texto": "¿Cuál es el cero (raíz) de la función y = 2x − 6?",
-      "opciones": ["x = 3", "x = −3", "x = 6", "x = −6"],
-      "correcta": 0,
-      "explicacion": "El cero es donde y = 0: 2x − 6 = 0, entonces 2x = 6 y x = 3."
-    },
-    {
-      "tema": "Ceros y puntos de la recta",
+      "tema": "Puntos de la recta",
       "texto": "¿Cuál de estos puntos pertenece a la recta y = 2x − 1?",
       "opciones": ["(3; 5)", "(3; 6)", "(1; 3)", "(2; 5)"],
       "correcta": 0,
       "explicacion": "Reemplazá x y comparalo con y. Con x = 3: 2·3 − 1 = 5, así que (3; 5) está en la recta. En (2; 5) daría 2·2 − 1 = 3, no 5."
-    },
-    {
-      "tema": "Paralelas y perpendiculares",
-      "texto": "¿Cuál de estas rectas es paralela a y = 3x − 2?",
-      "opciones": ["y = 3x + 5", "y = −3x − 2", "y = x/3 − 2", "y = 2x + 3"],
-      "correcta": 0,
-      "explicacion": "Las rectas paralelas tienen la misma pendiente (acá m = 3) y distinta ordenada al origen. y = 3x + 5 cumple las dos cosas."
-    },
-    {
-      "tema": "Paralelas y perpendiculares",
-      "texto": "¿Cuál de estas rectas es perpendicular a y = 2x + 1?",
-      "opciones": ["y = −x/2 + 4", "y = 2x − 1", "y = −2x + 1", "y = x/2 + 4"],
-      "correcta": 0,
-      "explicacion": "Dos rectas son perpendiculares cuando sus pendientes son opuestas e invertidas: si una es 2, la otra es −1/2."
-    },
-    {
-      "tema": "Intersección de rectas",
-      "texto": "Las rectas y = x + 1 e y = −x + 5 se cruzan en un punto. ¿Cuál es?",
-      "opciones": ["(2; 3)", "(3; 2)", "(1; 2)", "(4; 1)"],
-      "correcta": 0,
-      "explicacion": "Igualá las dos fórmulas: x + 1 = −x + 5, entonces 2x = 4 y x = 2. Reemplazando en la primera: y = 2 + 1 = 3. Se cruzan en (2; 3)."
     },
     {
       "tema": "Problemas con contexto",
@@ -132,11 +134,25 @@
       "explicacion": "Reemplazá x = 7: y = 200·7 + 500 = 1.400 + 500 = $1.900."
     },
     {
-      "tema": "Escribir la ecuación",
+      "tema": "De la ecuación al gráfico",
       "texto": "¿Cuál de estos gráficos corresponde a la recta y = x/2 − 2?",
-      "opcionesGraficos": ["m_correct", "m_wrong_sign", "m_wrong_b", "m_wrong_mag"],
+      "opcionesGraficos": ["a_correct", "a_wrong_sign", "a_wrong_b", "a_wrong_mag"],
       "correcta": 0,
-      "explicacion": "Tiene que cortar el eje y en −2, subir (pendiente positiva) y hacerlo despacio: 1 hacia arriba por cada 2 hacia la derecha, así que cruza el eje x en 4. Las otras opciones cambian el signo de la pendiente, la ordenada al origen o qué tan inclinada es."
+      "explicacion": "Tiene que cortar el eje y en −2, subir (pendiente positiva) y hacerlo despacio: 1 hacia arriba por cada 2 hacia la derecha. Las otras opciones cambian el signo de la pendiente, la ordenada al origen o qué tan inclinada es."
+    },
+    {
+      "tema": "De la ecuación al gráfico",
+      "texto": "¿Cuál de estos gráficos corresponde a la recta y = −x + 3?",
+      "opcionesGraficos": ["b_correct", "b_wrong_sign", "b_wrong_b", "b_wrong_mag"],
+      "correcta": 0,
+      "explicacion": "Tiene que cortar el eje y en 3 y bajar (pendiente negativa), con una inclinación suave: 1 hacia abajo por cada 1 hacia la derecha. Las otras opciones suben, cortan el eje y en otro lugar, o bajan más empinado."
+    },
+    {
+      "tema": "De la ecuación al gráfico",
+      "texto": "¿Cuál de estos gráficos corresponde a la recta y = 2x − 4?",
+      "opcionesGraficos": ["c_correct", "c_wrong_sign", "c_wrong_b", "c_wrong_mag"],
+      "correcta": 0,
+      "explicacion": "Tiene que cortar el eje y en −4, subir y hacerlo empinado: 2 hacia arriba por cada 1 hacia la derecha. Las otras opciones bajan, cortan el eje y en +4, o suben mucho más despacio."
     }
   ]
 }
