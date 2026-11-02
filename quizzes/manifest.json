@@ -3,7 +3,12 @@
   {
    "id": "funcion-lineal",
    "titulo": "Función lineal",
-   "descripcion": "y = mx + b: pendiente, ordenada y gráfico."
+   "descripcion": "y = mx + b: pendiente, ordenada y gráfico.",
+   "machete": {
+    "titulo": "Hoja machete",
+    "href": "machete-funcion-lineal.html",
+    "descripcion": "Todo función lineal en una página, visual. Se puede imprimir."
+   }
   },
   {
    "id": "funcion-cuadratica",

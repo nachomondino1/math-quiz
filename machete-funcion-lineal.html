@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f7fb">
+<title>Machete: función lineal</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=9">
+<style>
+body{display:block;min-height:0}
+.sheet{max-width:1000px;margin:0 auto;padding:18px 16px 40px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:6px 0 14px}
+.head h1{margin:0}
+.head small{display:block;color:var(--muted);font-size:.85rem}
+.pbtn{font:inherit;font-family:var(--font-display);font-weight:700;color:var(--accent);background:var(--card);border:2px solid var(--accent);border-radius:12px;padding:8px 14px;cursor:pointer;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.c{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 16px;box-shadow:0 2px 14px -6px var(--shadow);break-inside:avoid}
+.c.wide{grid-column:1/-1}
+.c h2{font-family:var(--font-display);font-size:1.02rem;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+.m{color:var(--accent);font-weight:700}
+.b{color:var(--tag4);font-weight:700}
+.big{font-family:var(--font-display);font-size:1.9rem;font-weight:700;text-align:center;margin:2px 0 10px;letter-spacing:.5px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.row>.tx{flex:1 1 150px;font-size:.92rem}
+.tx p{margin:0 0 7px}
+.tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-family:var(--font-display);font-weight:600;font-size:.78rem;padding:2px 10px;border-radius:99px;margin:2px 4px 0 0}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.15;font-size:.85em}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px 1px}
+.eq{background:var(--accent-soft);border-radius:10px;padding:6px 10px;margin:4px 0;font-size:.92rem}
+.eq b{font-family:var(--font-display)}
+.g{display:block;max-width:100%;height:auto;flex:0 0 auto}
+.minis .g{margin:0 auto}
+.minis{display:flex;justify-content:space-around;gap:6px;flex-wrap:wrap;text-align:center;font-size:.85rem}
+.minis b{display:block;font-family:var(--font-display);margin-top:2px}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.way{border:1px solid var(--border);border-radius:12px;padding:10px 12px;font-size:.9rem}
+.way h3{font-family:var(--font-display);font-size:.92rem;margin:0 0 6px}
+.way .eq{margin:3px 0}
+.res{font-family:var(--font-display);font-weight:700;color:var(--ok)}
+.foot{margin:14px 0 0;color:var(--muted);font-size:.8rem;text-align:center}
+.top a{color:var(--accent)}
+html.bw{--accent:#111;--accent-soft:#ececec;--accent2:#6b6b6b;--tag4:#111;--hl:#444;--ok:#111;--grid:#cfcfcf;--border:#8a8a8a;--card:#fff;--text:#000;--muted:#444;--shadow:transparent}
+html.bw body{background:#fff}
+html.bw .b{text-decoration:underline;text-underline-offset:3px}
+html.bw .res{color:#000}
+html.bw .tag{border:1px solid #888}
+@media print{
+  @page{size:A4;margin:8mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html{font-size:10.5px}
+  body{background:#fff}
+  .row{flex-wrap:nowrap}
+  .g{max-width:118px;height:auto}
+  .minis{flex-wrap:nowrap}
+  .minis .g{max-width:78px}
+  .ways{grid-template-columns:repeat(3,1fr)}
+  .big{font-size:1.5rem;margin-bottom:6px}
+  .c h2{margin-bottom:6px}
+  .noprint{display:none !important}
+  .sheet{padding:0;max-width:none}
+  .grid{gap:8px;grid-template-columns:1fr 1fr}
+  .c{box-shadow:none;padding:8px 10px}
+  .c.wide{grid-column:1/-1}
+  .head{margin:0 0 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="top noprint"><a href="index.html?c=funcion-lineal" style="text-decoration:none;font-weight:600;font-size:.9rem">← Función lineal</a></div>
+  <div class="head">
+    <div><h1>Función lineal</h1><small>Hoja machete · todo en una página</small></div>
+    <span class="noprint" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end"><button class="pbtn" onclick="document.documentElement.classList.toggle('bw')">Blanco y negro</button><button class="pbtn" onclick="window.print()">Imprimir / PDF</button></span>
+  </div>
+
+  <div class="grid">
+
+    <section class="c">
+      <h2><span class="n">1</span>La fórmula</h2>
+      <div class="big">f(x) = <span class="m">m</span>x + <span class="b">b</span></div>
+      <div class="row">
+        <div class="tx">
+          <p><span class="m">m</span> · pendiente: cuánto <b>sube ↑</b> o <b>baja ↓</b> la recta por cada 1 que avanzo →<br>
+          <span class="m">m</span> = <span class="fr"><span>↑ (+) ó ↓ (−)</span><span>→</span></span></p>
+          <p><span class="b">b</span> · ordenada al origen: donde corta al eje y, el punto (0; <span class="b">b</span>)</p>
+          <span class="tag">Dominio: ℝ</span><span class="tag">Gráfico: una recta</span>
+        </div>
+        <div id="g1"></div>
+      </div>
+    </section>
+
+    <section class="c">
+      <h2><span class="n">2</span>Graficar en 2 pasos</h2>
+      <div class="big" style="font-size:1.5rem">f(x) = <span class="m">2</span>x <span class="b">− 4</span></div>
+      <div class="row">
+        <div class="tx">
+          <p><b>①</b> Marco <span class="b">b = −4</span> sobre el eje y.</p>
+          <p><b>②</b> Desde ahí aplico <span class="m">m = <span class="fr"><span>2 ↑</span><span>1 →</span></span></span>: subo 2, avanzo 1. Repito y uno los puntos.</p>
+        </div>
+        <div id="g2"></div>
+      </div>
+    </section>
+
+    <section class="c">
+      <h2><span class="n">3</span>Qué dice el signo de m</h2>
+      <div class="minis">
+        <div><div id="g3a"></div><b class="m">m &gt; 0</b>crece ↗</div>
+        <div><div id="g3b"></div><b class="m">m &lt; 0</b>decrece ↘</div>
+        <div><div id="g3c"></div><b class="m">m = 0</b>constante →</div>
+      </div>
+    </section>
+
+    <section class="c">
+      <h2><span class="n">4</span>Raíz y ordenada</h2>
+      <div class="row">
+        <div class="tx">
+          <p><b>Raíz</b> (corta el eje x): hago <b>f(x) = 0</b> y despejo.</p>
+          <div class="eq">0 = 2x − 4 → x = 2 → <b>C⁰ = {2}</b></div>
+          <p><b>Ordenada</b> (corta el eje y): hago <b>x = 0</b>.</p>
+          <div class="eq">f(0) = 2·0 − 4 = −4 → <b>Ord = (0; −4)</b></div>
+        </div>
+        <div id="g4"></div>
+      </div>
+    </section>
+
+    <section class="c wide">
+      <h2><span class="n">5</span>Armar la ecuación de la recta <span style="font-weight:500;font-size:.85rem;color:var(--muted)">(siempre busco m y b para y = m·x + b)</span></h2>
+      <div class="ways">
+        <div class="way">
+          <h3>Tengo <span class="m">m</span> y <span class="b">b</span></h3>
+          <p style="margin:0 0 4px">Reemplazo directo.</p>
+          <div class="eq"><span class="m">m = 2</span>, <span class="b">b = 5</span></div>
+          <div class="eq">y = <span class="m">2</span>x + <span class="b">5</span></div>
+        </div>
+        <div class="way">
+          <h3>Tengo <span class="m">m</span> y un punto</h3>
+          <p style="margin:0 0 4px">Reemplazo x e y del punto y despejo <span class="b">b</span>.</p>
+          <div class="eq"><span class="m">m = 4</span>, P(1; −2)</div>
+          <div class="eq">−2 = <span class="m">4</span>·1 + b → <span class="b">b = −6</span></div>
+          <div class="eq res">y = 4x − 6</div>
+        </div>
+        <div class="way">
+          <h3>Tengo 2 puntos</h3>
+          <p style="margin:0 0 4px">Primero la pendiente, después como el caso anterior.</p>
+          <div class="eq"><span class="m">m</span> = <span class="fr"><span>y₂ − y₁</span><span>x₂ − x₁</span></span> = <span class="fr"><span>2 − (−4)</span><span>−1 − (−3)</span></span> = <span class="m">3</span></div>
+          <div class="eq">punto (−3; −4): −4 = 3·(−3) + b → <span class="b">b = 5</span></div>
+          <div class="eq res">y = 3x + 5</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="c wide">
+      <h2><span class="n">6</span>Rectas paralelas y perpendiculares</h2>
+      <div class="row" style="align-items:flex-start;justify-content:space-around">
+        <div style="text-align:center;font-size:.9rem">
+          <div id="g6a"></div>
+          <b>Paralelas //</b><br>misma pendiente<br><span class="m">m₁ = m₂</span>
+        </div>
+        <div style="text-align:center;font-size:.9rem">
+          <div id="g6b"></div>
+          <b>Perpendiculares ⊥</b><br>inversa y opuesta<br><span class="m">m₂ = −<span class="fr"><span>1</span><span>m₁</span></span></span>
+          <div style="color:var(--muted);font-size:.8rem;margin-top:2px">si no es ninguna: oblicuas</div>
+        </div>
+        <div class="tx" style="flex:1 1 230px;font-size:.9rem">
+          <p><b>Recta por un punto:</b> ① saco la <span class="m">m</span> que corresponde, ② reemplazo el punto para hallar <span class="b">b</span>.</p>
+          <div class="eq">R: y = 2x + 1 · P(2; 3)</div>
+          <div class="eq">// <span class="m">m = 2</span>: 3 = 2·2 + b → b = −1 → <b>y = 2x − 1</b></div>
+          <div class="eq">⊥ <span class="m">m = −½</span>: 3 = −½·2 + b → b = 4 → <b>y = −½x + 4</b></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <p class="foot">En y = m·x + b: la m es el número que multiplica a x, la b es el que está solo.</p>
+</div>
+
+<script>
+if (/[?&]bw\b/.test(location.search)) document.documentElement.classList.add("bw");
+let gid = 0;
+function G(o){
+  const [x0, x1] = o.xr, [y0, y1] = o.yr, u = o.u || 18, p = 16;
+  const W = (x1 - x0) * u + p * 2, H = (y1 - y0) * u + p * 2;
+  const X = x => p + (x - x0) * u, Y = y => p + (y1 - y) * u;
+  const id = "ar" + (++gid);
+  let s = `<svg class="g" viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${o.label || "Gráfico"}">`;
+  s += `<defs><marker id="${id}" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--hl)"/></marker></defs>`;
+  for (let x = Math.ceil(x0); x <= x1; x++) s += `<line x1="${X(x)}" y1="${Y(y0)}" x2="${X(x)}" y2="${Y(y1)}" stroke="var(--grid)" stroke-width="1"/>`;
+  for (let y = Math.ceil(y0); y <= y1; y++) s += `<line x1="${X(x0)}" y1="${Y(y)}" x2="${X(x1)}" y2="${Y(y)}" stroke="var(--grid)" stroke-width="1"/>`;
+  s += `<line x1="${X(x0)}" y1="${Y(0)}" x2="${X(x1)}" y2="${Y(0)}" stroke="var(--text)" stroke-width="1.4"/>`;
+  s += `<line x1="${X(0)}" y1="${Y(y0)}" x2="${X(0)}" y2="${Y(y1)}" stroke="var(--text)" stroke-width="1.4"/>`;
+  s += `<text x="${X(x1) + 2}" y="${Y(0) + 3}" font-size="9" fill="var(--text)">x</text><text x="${X(0) + 3}" y="${Y(y1) - 3}" font-size="9" fill="var(--text)">y</text>`;
+  if (o.ticks) {
+    for (const t of o.ticks) {
+      if (t >= x0 && t <= x1 && t !== 0) s += `<text x="${X(t)}" y="${Y(0) + 11}" font-size="8" text-anchor="middle" fill="var(--muted)">${String(t).replace("-", "−")}</text>`;
+      if (t >= y0 && t <= y1 && t !== 0) s += `<text x="${X(0) - 4}" y="${Y(t) + 3}" font-size="8" text-anchor="end" fill="var(--muted)">${String(t).replace("-", "−")}</text>`;
+    }
+  }
+  for (const l of o.lines || []) {
+    let a, b2;
+    if (l.m === 0) { a = [x0, l.b]; b2 = [x1, l.b]; }
+    else {
+      const xa = (y0 - l.b) / l.m, xb = (y1 - l.b) / l.m;
+      const lo = Math.max(x0, Math.min(xa, xb)), hi = Math.min(x1, Math.max(xa, xb));
+      a = [lo, l.m * lo + l.b]; b2 = [hi, l.m * hi + l.b];
+    }
+    s += `<line x1="${X(a[0])}" y1="${Y(a[1])}" x2="${X(b2[0])}" y2="${Y(b2[1])}" stroke="${l.c || "var(--accent)"}" stroke-width="2.6" stroke-linecap="round"/>`;
+  }
+  for (const q of o.paths || []) s += `<polyline points="${q.d.map(v => X(v[0]) + "," + Y(v[1])).join(" ")}" fill="none" stroke="${q.c || "var(--text)"}" stroke-width="1.3"/>`;
+  for (const t of o.steps || []) {
+    s += `<path d="M${X(t.x)} ${Y(t.y)} L${X(t.x + t.dx)} ${Y(t.y)}" stroke="var(--hl)" stroke-width="2" fill="none" marker-end="url(#${id})"/>`;
+    s += `<path d="M${X(t.x + t.dx)} ${Y(t.y)} L${X(t.x + t.dx)} ${Y(t.y + t.dy)}" stroke="var(--hl)" stroke-width="2" fill="none" marker-end="url(#${id})"/>`;
+    if (t.lx) s += `<text x="${X(t.x + t.dx / 2)}" y="${Y(t.y) + 12}" font-size="10" font-weight="700" text-anchor="middle" fill="var(--hl)">${t.lx}</text>`;
+    if (t.ly) s += `<text x="${X(t.x + t.dx) + 5}" y="${Y(t.y + t.dy / 2) + 3}" font-size="10" font-weight="700" fill="var(--hl)">${t.ly}</text>`;
+  }
+  for (const q of o.pts || []) {
+    s += `<circle cx="${X(q.x)}" cy="${Y(q.y)}" r="4" fill="${q.c || "var(--accent)"}" stroke="var(--card)" stroke-width="1.5"/>`;
+    if (q.t) s += `<text x="${X(q.x) + (q.dx ?? 7)}" y="${Y(q.y) + (q.dy ?? -6)}" font-size="10" font-weight="700" fill="${q.c || "var(--accent)"}" text-anchor="${q.a || "start"}">${q.t}</text>`;
+  }
+  return s + "</svg>";
+}
+const B = "var(--tag4)", V = "var(--accent2)";
+document.getElementById("g1").innerHTML = G({ xr: [-3, 4], yr: [-2, 6], u: 22, ticks: [-2, -1, 1, 2, 3, 4, 5, 6], label: "Recta y = 2x + 1",
+  lines: [{ m: 2, b: 1 }], steps: [{ x: 0, y: 1, dx: 1, dy: 2, lx: "1", ly: "m" }], pts: [{ x: 0, y: 1, c: B, t: "b", dx: -9, dy: -4, a: "end" }] });
+document.getElementById("g2").innerHTML = G({ xr: [-1, 5], yr: [-5, 4], u: 20, ticks: [-4, -2, 2, 4], label: "Recta y = 2x − 4 graficada por pendiente y ordenada",
+  lines: [{ m: 2, b: -4 }], steps: [{ x: 0, y: -4, dx: 1, dy: 2, lx: "1", ly: "2" }, { x: 1, y: -2, dx: 1, dy: 2 }], pts: [{ x: 0, y: -4, c: B, t: "b = −4", dx: 6, dy: 14 }] });
+const mini = (m, b) => G({ xr: [-2, 2], yr: [-2, 2], u: 20, label: "Recta", lines: [{ m, b }] });
+document.getElementById("g3a").innerHTML = mini(1, 0);
+document.getElementById("g3b").innerHTML = mini(-1, 0);
+document.getElementById("g3c").innerHTML = mini(0, 1);
+document.getElementById("g4").innerHTML = G({ xr: [-1, 5], yr: [-5, 4], u: 20, ticks: [-4, -2, 2, 4], label: "Recta y = 2x − 4 con su raíz y su ordenada",
+  lines: [{ m: 2, b: -4 }], pts: [{ x: 2, y: 0, c: "var(--ok)", t: "raíz", dx: 6, dy: -7 }, { x: 0, y: -4, c: B, t: "ord", dx: 7, dy: 4 }] });
+document.getElementById("g6a").innerHTML = G({ xr: [-3, 3], yr: [-3, 3], u: 20, label: "Dos rectas paralelas",
+  lines: [{ m: 1, b: 1.5 }, { m: 1, b: -1, c: V }] });
+const s5 = 1 / Math.sqrt(5), a = 0.55;
+document.getElementById("g6b").innerHTML = G({ xr: [-3, 3], yr: [-3, 3], u: 20, label: "Dos rectas perpendiculares",
+  lines: [{ m: 2, b: 0 }, { m: -0.5, b: 0, c: V }],
+  paths: [{ d: [[a * s5, 2 * a * s5], [a * s5 + 2 * a * s5, 2 * a * s5 - a * s5], [2 * a * s5, -a * s5]] }] });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <title>Quizzes de repaso</title>
 </head>
 <body>
@@ -40,7 +40,7 @@
       const qs = man.quizzes.filter(q => q.carpeta === c.id);
       const n = qs.length ? `${qs.length} quiz${qs.length > 1 ? "zes" : ""}` : "Próximamente";
       const abierta = sel ? sel === c.id : i === 0;
-      return `<details class="folder t${i % 5}"${abierta && qs.length ? " open" : ""}><summary><span class="fi-ic" aria-hidden="true"></span><span class="ft"><b>${esc(c.titulo)}</b><small>${esc(c.descripcion || "")}</small></span><span class="chip t${i % 5}">${n}</span></summary>${qs.map(card).join("")}</details>`;
+      return `<details class="folder t${i % 5}"${abierta && qs.length ? " open" : ""}><summary><span class="fi-ic" aria-hidden="true"></span><span class="ft"><b>${esc(c.titulo)}</b><small>${esc(c.descripcion || "")}</small></span><span class="chip t${i % 5}">${n}</span></summary>${c.machete ? `<a class="item machete" href="${esc(c.machete.href)}"><div class="fe">Para tener a mano</div><div class="ti">${esc(c.machete.titulo)}</div><div class="de">${esc(c.machete.descripcion || "")}</div></a>` : ""}${qs.map(card).join("")}</details>`;
     }).join("");
   } catch (e) {
     app.innerHTML = "<h1>Quizzes de repaso</h1><p>No pude cargar la lista.</p>";

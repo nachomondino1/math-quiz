@@ -139,3 +139,4 @@ a{color:var(--accent)}
 .folder[open]>summary{border-bottom:1px solid var(--border)}
 .folder .item{margin:12px;box-shadow:none}
 .folder .chip{white-space:nowrap}
+.item.machete{border-style:dashed;border-color:var(--accent)}
